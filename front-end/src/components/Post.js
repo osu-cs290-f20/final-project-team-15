@@ -1,4 +1,5 @@
 import React from 'react';
+import mockData from "../mockdata.json";
 
 function Post(props){
     return(

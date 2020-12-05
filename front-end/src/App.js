@@ -11,6 +11,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Component } from "react";
 import Post from "./components/Post";
+import Filter from "./components/Filter"
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
       </Navbar>
 
       {/* Form filtering */}
-
+      <Filter />
     </div>
   );
 }
