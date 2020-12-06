@@ -1,12 +1,23 @@
 import React from "react";
 import mockData from "../mockdata.json";
 
+async function getUserData() {
+  const response = await fetch("http://localhost:8000/harvester/", {
+    method : 'GET'
+  })
+  return response.json();
+}
+
 function Post(props) {
+  getUserData().then(data => {
+    console.log(data);
+  });
+  // console.log(actualData)
   let data = mockData;
   let post = data.map((data) => (
     <div style={postStyle}>
       <h2 style={fontStyle}>
-        Name: {data.first_name} {data.last_name}
+        {data.first_name} {data.last_name}
       </h2>
       <p style={fontStyle}>Age: {data.age}</p>
       <p style={fontStyle}>Blood Type: {data.blood_type}</p>

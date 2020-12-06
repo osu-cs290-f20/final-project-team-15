@@ -11,7 +11,7 @@ function Filter(props) {
       <Form.Group style={fGroupStyle}>
         <Form.Row>
           <Form.Label column="sm" lg={2} style={fLabelSytle}>
-            Age range
+            Age Range
           </Form.Label>
           <Col>
             <Form.Control
