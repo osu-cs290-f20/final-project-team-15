@@ -12,6 +12,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Component } from "react";
 import Post from "./components/Post";
 import Filter from "./components/Filter";
+import userReview from "./components/userReview";
+import linkSection from "./components/linkSection";
 
 function App() {
   return (
@@ -26,9 +28,11 @@ function App() {
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">
+                User Review
+              </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Another action
+                Terms and Conditions
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -46,11 +50,14 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
 
-      {/* Form filtering */}
       <div style={alignStyle}>
+        {/* Form filtering */}
         <Filter />
         <Post />
       </div>
+
+      <userReview />
+      <linkSection />
     </div>
   );
 }
