@@ -12,8 +12,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Component } from "react";
 import Post from "./components/Post";
 import Filter from "./components/Filter";
-import userReview from "./components/userReview";
-import linkSection from "./components/linkSection";
+import UserReview from "./components/userReview";
+import LinkSection from "./components/linkSection";
 
 function App() {
   return (
@@ -55,9 +55,11 @@ function App() {
         <Filter />
         <Post />
       </div>
+      
+      <UserReview />
+      
 
-      <userReview />
-      <linkSection />
+      <LinkSection />
     </div>
   );
 }
