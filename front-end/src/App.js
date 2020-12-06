@@ -11,11 +11,11 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Component } from "react";
 import Post from "./components/Post";
-import Filter from "./components/Filter"
+import Filter from "./components/Filter";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={pageSytle}>
       <header className=""></header>
       {/* Navbar  */}
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -47,9 +47,20 @@ function App() {
       </Navbar>
 
       {/* Form filtering */}
-      <Filter />
+      <div style={alignStyle}>
+        <Filter />
+        <Post />
+      </div>
     </div>
   );
 }
 
+const pageSytle = {
+  backgroundColor: "#18191A"
+};
+
+const alignStyle = {
+  display: "flex",
+  flexDirection: "row"
+};
 export default App;

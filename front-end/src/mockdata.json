@@ -6,9 +6,93 @@
         "blood_type": "O"
     },
     {
-        "first_name": "Bob",
-        "last_name": "Bill",
+        "first_name": "Anthony",
+        "last_name": "Nguyen",
         "age": 20,
-        "blood_type": "O"
+        "blood_type": "A"
+    },
+    {
+        "first_name": "Khai",
+        "last_name": "Phan",
+        "age": 19,
+        "blood_type": "O-"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "Rob",
+        "last_name": "Hess",
+        "age": 35,
+        "blood_type": "B"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
+    },
+    {
+        "first_name": "John",
+        "last_name": "Smith",
+        "age": 19,
+        "blood_type": "A+"
     }
 ]
