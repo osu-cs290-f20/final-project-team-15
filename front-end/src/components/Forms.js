@@ -163,6 +163,20 @@ class Forms extends React.Component {
                 id="formHorizontalRadios3"
               />
             </Col>
+            <Form.Label column="sm" lg={2} className="label">
+              Credit Card:
+            </Form.Label>
+            <Col>
+              <Form.Control
+                size="sm"
+                type="text"
+                placeholder="Type"
+                className="control"
+                name="creditCard"
+                onChange={this.handleChange}
+                value={this.state.creditCard}
+              />
+            </Col>
           </Form.Row>
         </Form.Group>
         {/* <h1 style={{color:"#FFFFFF"}}>{this.state.first_name}</h1> */}

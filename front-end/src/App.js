@@ -22,10 +22,9 @@ import UserReview from "./components/userReview";
 import LinkSection from "./components/linkSection";
 import Forms from "./components/Forms";
 import AboutUs from "./views/AboutUs"
+import Home from "./views/Home"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-
-
 
 function App() {
   return (
@@ -40,22 +39,15 @@ function App() {
           <Route path="/about">
             <AboutUs />
           </Route>
-          {/* <Route path="/">
-            <App />
-          </Route> */}
+          <Route path="/">
+            <Home />
+          </Route>
 
         </Switch>
 
         <Forms />
-        <div style={alignStyle}>
-          {/* Form filtering */}
-          <Filter />
-          <Post />
-        </div>
         
         <UserReview />
-
-        
 
         <Footer />
         
@@ -64,12 +56,4 @@ function App() {
   );
 }
 
-const pageSytle = {
-  backgroundColor: "#18191A"
-};
-
-const alignStyle = {
-  display: "flex",
-  flexDirection: "row"
-};
 export default App;
