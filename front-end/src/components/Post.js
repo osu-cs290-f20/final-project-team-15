@@ -29,8 +29,8 @@ class Post extends React.Component {
   // let data = getUserData();
   render() {
     // let post = "";
-    let post = this.state.newData 
-      ? this.state.newData.map((data) => {
+    let post = Object.keys(this.state.newData).length === 0
+      ? "" : this.state.newData.map((data) => {
           <div className="div">
             <h2 className="fontStyle">
               {data.first_name} {data.last_name}
@@ -38,8 +38,8 @@ class Post extends React.Component {
             <p className="fontStyle">Age: {data.age}</p>
             <p className="fontStyle">Blood Type: {data.blood_type}</p>
           </div>;
-        })
-      : "";
+        });
+        console.log(post);
     return (
       <div className="pageStyle">
         {post}

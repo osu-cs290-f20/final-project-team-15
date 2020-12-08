@@ -43,7 +43,8 @@ class Forms extends React.Component {
   }
 
   handleClick() {
-    if (this.state.first_name) { // list out the conditions
+    if (this.state.first_name) {
+      // list out the conditions
       let json = {
         first_name: this.state.first_name,
         last_name: this.state.last_name,
@@ -121,6 +122,10 @@ class Forms extends React.Component {
                 value={this.state.blood_type}
               />
             </Col>
+          </Form.Row>
+        </Form.Group>
+        <Form.Group>
+          <Form.Row>
             <Form.Label column="sm" lg={2} className="label">
               Phone Number:
             </Form.Label>
@@ -135,32 +140,32 @@ class Forms extends React.Component {
                 value={this.state.phoneNumber}
               />
             </Col>
+            <Form.Label as="legend" column sm={2}>
+              Radios
+            </Form.Label>
+            <Col sm={10}>
+              <Form.Check
+                type="radio"
+                label="Male"
+                name="formHorizontalRadios"
+                id="formHorizontalRadios1"
+              />
+              <Form.Check
+                type="radio"
+                label="Female"
+                name="formHorizontalRadios"
+                id="formHorizontalRadios2"
+              />
+              <Form.Check
+                type="radio"
+                label="Other"
+                name="formHorizontalRadios"
+                id="formHorizontalRadios3"
+              />
+            </Col>
           </Form.Row>
         </Form.Group>
         {/* <h1 style={{color:"#FFFFFF"}}>{this.state.first_name}</h1> */}
-        <Form.Label as="legend" column sm={2}>
-          Radios
-        </Form.Label>
-        <Col sm={10}>
-          <Form.Check
-            type="radio"
-            label="Male"
-            name="formHorizontalRadios"
-            id="formHorizontalRadios1"
-          />
-          <Form.Check
-            type="radio"
-            label="Female"
-            name="formHorizontalRadios"
-            id="formHorizontalRadios2"
-          />
-          <Form.Check
-            type="radio"
-            label="third radio"
-            name="formHorizontalRadios"
-            id="formHorizontalRadios3"
-          />
-        </Col>
         <Button variant="outline-danger" onClick={this.handleClick}>
           Submit
         </Button>{" "}

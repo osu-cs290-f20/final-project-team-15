@@ -5,7 +5,7 @@
   background-color: #242526;
   border-radius: 10px;
   width: 300px;
-  height: 1000px;
+  height: 500px;
   flex-direction: column;
   font-family: "Archivo", sans-serif;
 }
@@ -19,15 +19,17 @@
 .control {
   font-family: "Archivo", sans-serif;
   width: 100px;
+  height: 20px;
   padding: 5px;
   margin: 5px;
+  flex: inline-flex;
+  flex-direction: row;
 }
 
 .label {
   font-family: "Archivo", sans-serif;
   color: #ffffff;
-  display: inline-flex;
-  flex-direction: column;
+  height: 20px;
 }
 
 .group {
