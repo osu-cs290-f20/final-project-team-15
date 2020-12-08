@@ -19,6 +19,9 @@ def index(request):
             newUser = UserData(
                 first_name=obj['first_name'],
                 last_name=obj['last_name'],
+                phone_number=obj['phone_number'],
+                gender=obj['gender'],
+                race=obj['race'],
                 age=obj['age']
             )
         except(KeyError):

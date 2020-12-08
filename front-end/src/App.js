@@ -1,6 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import {
   Navbar,
   Nav,
   NavDropdown,
@@ -14,12 +20,16 @@ import Post from "./components/Post";
 import Filter from "./components/Filter";
 import UserReview from "./components/userReview";
 import LinkSection from "./components/linkSection";
+import Forms from "./components/Forms";
+import AboutUs from "./views/AboutUs"
+import Footer from "./components/Footer"
 
 import { FaShoppingCart } from "react-icons/fa";
 
 function App() {
   return (
-    <div className="App" style={pageSytle}>
+    <Router>
+    <div className="App">
       <header className=""></header>
       {/* Navbar  */}
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -29,12 +39,12 @@ function App() {
           <Nav className="mr-auto">
             <NavDropdown title="Services" id="collapsable-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
-                Browse Data
+                Data Browser
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Upload Your Data
+                Data Uploader
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Data Auction</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Data Auctionhouse</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
             <NavDropdown title="About" id="collapsable-nav-dropdown">
@@ -44,7 +54,11 @@ function App() {
               <NavDropdown.Item href="#action/3.2">
                 Terms and Conditions
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">About Us</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                <Link to="/about">
+                About Us
+                </Link>
+              </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.4">
                 Careers
               </NavDropdown.Item>
@@ -59,6 +73,18 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
 
+      // Routing
+      <Switch>
+
+        <Route path="/about">
+          
+        </Route>
+
+      </Switch>
+
+      <Forms />
+
+
       <div style={alignStyle}>
         {/* Form filtering */}
         <Filter />
@@ -67,8 +93,11 @@ function App() {
       
       <UserReview />
 
-      <LinkSection />
+      <AboutUs />
+
+      <Footer />
     </div>
+    </Router>
   );
 }
 

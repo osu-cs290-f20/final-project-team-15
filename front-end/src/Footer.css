@@ -1,0 +1,28 @@
+#icons {
+
+    background-color: #6b2823;
+    size: 50px;
+
+}
+
+.header {
+
+    font-family: "Archivo", sans-serif;
+    color: white;
+
+}
+
+.listText
+{
+
+    font-family: "Archivo", sans-serif;
+    color: white;
+
+}
+
+.div {
+
+    display: flex;
+    justify-content: space-around;
+
+}
