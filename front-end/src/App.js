@@ -18,9 +18,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Component } from "react";
 import Post from "./components/Post";
 import Filter from "./components/Filter";
-import UserReview from "./components/userReview";
 import LinkSection from "./components/linkSection";
-import Forms from "./components/Forms";
 import AboutUs from "./views/AboutUs"
 import Home from "./views/Home"
 import Footer from "./components/Footer"
@@ -44,11 +42,7 @@ function App() {
           </Route>
 
         </Switch>
-
-        <Forms />
         
-        <UserReview />
-
         <Footer />
         
       </Router>

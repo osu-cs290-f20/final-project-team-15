@@ -1,14 +1,18 @@
-<div style={alignStyle}>
-          {/* Form filtering */}
+/* <div style={alignStyle}>
+          
           <Filter />
           <Post />
-        </div>
+        </div> */ 
 
 .pageStyle {
-  backgroundColor: #18191A;
+
+  background-color: #18191A;
+
 }
         
 .alignStyle {
-  display: "flex",
-  flexDirection: "row"
+
+  display: flex;
+  flex-direction: row;
+
 }

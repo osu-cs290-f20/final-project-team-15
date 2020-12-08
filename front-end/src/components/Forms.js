@@ -52,7 +52,7 @@ class Forms extends React.Component {
         blood_type: this.state.blood_type,
         phone_number: this.state.phoneNumber,
         gender: this.state.gender,
-        race: this.state.race,
+        race: this.state.race
         /*
       gender
       race
@@ -143,6 +143,7 @@ class Forms extends React.Component {
             <Form.Label as="legend" column sm={2}>
               Radios
             </Form.Label>
+            {/* this this */}
             <Col sm={10}>
               <Form.Check
                 type="radio"
