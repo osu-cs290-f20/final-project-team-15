@@ -35,6 +35,7 @@ class Forms extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   // methods
   handleChange(event) {
@@ -42,6 +43,22 @@ class Forms extends React.Component {
     this.setState({
       [name]: value,
     });
+  }
+
+  handleSubmit(event)
+  {
+
+    const form = event.currentTarget;
+    if(form.checkValidity() === false)
+    {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+    }
+
+    this.state.validated = true;
+
   }
 
   handleClick(event) {
@@ -57,15 +74,16 @@ class Forms extends React.Component {
 
     this.state.validated = true;
 
-    if (
-      this.state.first_name.length > 0 && 
-      this.state.last_name.length > 0 &&
-      parseInt(this.state.age) > 0 &&
-      this.state.blood_type.length > 0 &&
-      this.state.phoneNumber.length > 0 &&
-      this.state.gender.length > 0 &&
-      this.state.race.length > 0
-      ) {
+    // if (
+    //   this.state.first_name.length > 0 && 
+    //   this.state.last_name.length > 0 &&
+    //   parseInt(this.state.age) > 0 &&
+    //   this.state.blood_type.length > 0 &&
+    //   this.state.phoneNumber.length > 0 &&
+    //   this.state.gender.length > 0 &&
+    //   this.state.race.length > 0 &&
+    //   this.state.creditCard > 0
+    //   ) {
       // list out the conditions
         let json = {
           first_name: this.state.first_name,
@@ -74,8 +92,9 @@ class Forms extends React.Component {
           blood_type: this.state.blood_type,
           phone_number: this.state.phoneNumber,
           gender: this.state.gender,
-          race: this.state.race
-    
+          race: this.state.race,
+          credit_card: this.state.creditCard
+          // check if need credit card
         };
 
       fetch("http://localhost:8000/harvester/", {
@@ -108,10 +127,10 @@ class Forms extends React.Component {
         console.log(e);
       })
 
-    }
-    else {
-      alert("Invalid Inputs please check")
-    }
+    //}
+    // else {
+    //   //alert("Invalid Inputs please check")
+    // }
   }
 
   render() {
@@ -119,7 +138,7 @@ class Forms extends React.Component {
       <div className="divForms">
         <h1 className="headerForms">Forms</h1>
         <br />
-        <Form>
+        <Form noValidate validated={this.state.validated} onSubmit={this.handleSubmit}>
           <Form.Group controlId="name" className="groupForms">
             <Form.Row>
               <Col>
@@ -129,6 +148,7 @@ class Forms extends React.Component {
               </Col>
               <Col>
                 <Form.Control
+                  required
                   size="sm"
                   type="text"
                   placeholder="First"
@@ -137,9 +157,13 @@ class Forms extends React.Component {
                   onChange={this.handleChange}
                   value={this.state.first_name}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your first name.
+                </Form.Control.Feedback>
               </Col>
               <Col>
                 <Form.Control
+                  required
                   size="sm"
                   type="text"
                   placeholder="Last"
@@ -148,6 +172,9 @@ class Forms extends React.Component {
                   onChange={this.handleChange}
                   value={this.state.last_name}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your last name.
+                </Form.Control.Feedback>
               </Col>
             </Form.Row>
           </Form.Group>
@@ -161,6 +188,7 @@ class Forms extends React.Component {
               </Col>
               <Col>
                 <Form.Control
+                  required
                   size="sm"
                   type="number"
                   placeholder="Age"
@@ -169,6 +197,9 @@ class Forms extends React.Component {
                   onChange={this.handleChange}
                   value={this.state.age}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your age.
+                </Form.Control.Feedback>
               </Col>
             </Form.Row>
           </Form.Group>
@@ -182,6 +213,7 @@ class Forms extends React.Component {
               </Col>
               <Col>
                 <Form.Control
+                  required
                   size="sm"
                   type="text"
                   placeholder="Blood Type"
@@ -190,6 +222,9 @@ class Forms extends React.Component {
                   onChange={this.handleChange}
                   value={this.state.blood_type}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a blood type.
+                </Form.Control.Feedback>
               </Col>
             </Form.Row>
           </Form.Group>
@@ -203,6 +238,7 @@ class Forms extends React.Component {
               </Col>
               <Col>
                 <Form.Control
+                  required
                   size="sm"
                   type="text"
                   placeholder="Mobile Phone Number"
@@ -211,6 +247,9 @@ class Forms extends React.Component {
                   onChange={this.handleChange}
                   value={this.state.phoneNumber}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a mobile phone number.
+                </Form.Control.Feedback>
               </Col>
             </Form.Row>
           </Form.Group>
@@ -263,6 +302,7 @@ class Forms extends React.Component {
               </Col>
               <Col>
                 <Form.Control
+                  required
                   size="sm"
                   type="text"
                   placeholder="Credit/Debit"
@@ -271,6 +311,9 @@ class Forms extends React.Component {
                   onChange={this.handleChange}
                   value={this.state.creditCard}
                 />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a credit card number.
+                </Form.Control.Feedback>
               </Col>
             </Form.Row>
           </Form.Group>
@@ -282,10 +325,14 @@ class Forms extends React.Component {
               </Col>
               <Col>
                 <Form.Control 
+                  required
                   as="select" 
                   className="controlForms" 
                   size="sm" 
                   defaultValue="Choose..."
+                  name="race" 
+                  onChange={this.handleChange}
+                  value={this.state.creditCard}
                 >
                   <option>Choose...</option>
                   <option>Asian</option>
@@ -296,17 +343,20 @@ class Forms extends React.Component {
                   <option>Native Hawaiian or Other Pacific Islander</option>
                   <option>Other</option>
                 </Form.Control>
+                <Form.Control.Feedback type="invalid">
+                  Please choose a race.
+                </Form.Control.Feedback>
               </Col>
             </Form.Row>
           </Form.Group>
 
-          <Button variant="outline-danger" type="submit" onClick={this.handleClick}>
+          <Button variant="outline-danger" type="submit" /* onClick={this.handleClick} */>
             Submit
           </Button>
 
         </Form>
         {/* <h1 style={{color:"#FFFFFF"}}>{this.state.first_name}</h1> */}
-        <div myClass="form-input-container">
+        {/* <div myClass="form-input-container">
           <label for="form-race" myClass="labelForms">Race</label>
           <div myClass="form-input-element">
             <select id="form-race" myClass="form-input" name="race" onChange={this.handleChange}>
@@ -320,7 +370,7 @@ class Forms extends React.Component {
               <option>Other</option>
             </select>
           </div>
-        </div>
+        </div> */}
         {/* <Button variant="outline-danger" onClick={this.handleClick}>
           Submit
         </Button>{" "} */}
@@ -333,7 +383,8 @@ class Forms extends React.Component {
         //   this.state.gender.length > 0 &&
         //   this.state.race.length > 0
         // }</h1> */}
-        <h1 style={{color:"#FFFFFF"}}> gender: {this.state.gender.length > 0 ? "true" : "false"}</h1>
+        {/* gender, race doesnt work check again */}
+        <h1 style={{color:"#FFFFFF"}}> gender: {this.state.race.length > 0 ? "true" : "false"}</h1>
       </div>
     );
   }

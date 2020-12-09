@@ -1,11 +1,11 @@
 .divForms {
   padding: 10px;
-  margin: 10px;
+  /* margin: 10px; */
   display: flex;
   background-color: #242526;
-  border-radius: 10px;
+  /* border-radius: 10px;
   width: 300px;
-  height: 600px;
+  height: 600px; */
   flex-direction: column;
   font-family: "Archivo", sans-serif;
 }

@@ -1,17 +1,20 @@
 import React from 'react';
+import { MDBMask, MDBView, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 import "../Careers.css";
 
-function Careers() {
+class CareersPage extends React.Component {
+    // render the page
+    render() {
 
-    return( 
-
+      return (
         <div>
-            <p id="CareersPara">
-                Work in progress..
-            </p>
+            <MDBView>
+
+            </MDBView>   
         </div>
+      )
 
-    )
+    }
 }
-
-export default Careers;
+  
+export default CareersPage;
