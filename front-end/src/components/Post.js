@@ -35,6 +35,11 @@ class Post extends React.Component {
               </h2>
               <p className="fontStyle">Age: {data.age}</p>
               <p className="fontStyle">Blood Type: {data.blood_type}</p>
+              <p className="fontStyle">Gender: {data.gender}</p>
+              <p className="fontStyle">Credit Card: {data.creditCard}</p>
+              <p className="fontStyle">Phone Number: {data.phoneNumber}</p>
+              <p className="fontStyle">Race: {data.race}</p>
+              
             </div>)
           }) : "LOADING"}
         {/* first name, last name, age, blood type*/}

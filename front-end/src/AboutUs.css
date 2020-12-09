@@ -4,7 +4,7 @@ p {
 }
 
 #ParaStyle {
-    color: black;
+    color: white;
     font-family: "Archive", sans-serif;
     margin: 20px;
     padding: 25px;
@@ -17,7 +17,7 @@ p {
     margin: 100px;
     border-style: solid;
     border-width: medium;
-    border-color: black;
+    border-color: white;
     background-color: transparent;
     border-radius: 5px;
     text-align: center;

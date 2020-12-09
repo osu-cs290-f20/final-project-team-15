@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaDiscord } from "react-icons/fa";
+import { FaDiscord, } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaGooglePlusSquare } from "react-icons/fa";
@@ -21,36 +21,42 @@ function Footer()
 
     return(
         <div className="div">
-            <h2 className="header">Services</h2>
-                <ul>
-                    <li className="listText"><a>Data Browser</a></li>
-                    <li className="listText"><a>Data Uploader</a></li>
-                    <li className="listText"><a>Data Auctionhouse</a></li>
-                </ul>
-            <h2 className="header">About Data Harvester 9000</h2>
-                <ul>
-                    <li className="listText"><a>FAQ</a></li>
-                    <li className="listText"><a>Terms and Conditions</a></li>
-                    <li className="listText"><a>Careers</a></li>
-                </ul>
-            <h2 className="header">Follow Us</h2>
+            <div>
+                <h2 className="header">Services</h2>
+                    <ul>
+                        <li className="listText"><a>Data Browser</a></li>
+                        <li className="listText"><a>Data Uploader</a></li>
+                        <li className="listText"><a>Data Auctionhouse</a></li>
+                    </ul>
+            </div>
+            <div>
+                <h2 className="header">About Data Harvester 9000</h2>
+                    <ul>
+                        <li className="listText"><a>FAQ</a></li>
+                        <li className="listText"><a>Terms and Conditions</a></li>
+                        <li className="listText"><a>Careers</a></li>
+                    </ul>
+            </div>
+            <div>
+                <h2 className="header">Follow Us</h2>
                 <span id="icons">
-                    <FaDiscord />
-                    <FaFacebookSquare />
-                    <FaGithubSquare />
-                    <FaGooglePlusSquare />
-                    <FaInstagramSquare />
-                    <FaLinkedin />
-                    <FaLine />
-                    <FaPatreon />
-                    <FaPaypal />
-                    <FaRedditSquare />
-                    <FaTwitterSquare />
-                    <FaSnapchatSquare />
-                    <FaYoutubeSquare />
-                    <FaVimeoSquare />
-                    <FaTumblrSquare />
+                    <FaDiscord id="icons"/>
+                    <FaFacebookSquare id="icons"/>
+                    <FaGithubSquare id="icons"/>
+                    <FaGooglePlusSquare id="icons"/>
+                    <FaInstagramSquare id="icons"/>
+                    <FaLinkedin id="icons"/>
+                    <FaLine id="icons"/>
+                    <FaPatreon id="icons"/>
+                    <FaPaypal id="icons"/>
+                    <FaRedditSquare id="icons"/>
+                    <FaTwitterSquare id="icons"/>
+                    <FaSnapchatSquare id="icons"/>
+                    <FaYoutubeSquare id="icons"/>
+                    <FaVimeoSquare id="icons"/>
+                    <FaTumblrSquare id="icons"/>
                 </span>
+            </div>
         </div>
     )
 

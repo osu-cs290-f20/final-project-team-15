@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap"; // Navbar material
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaShoppingCart } from "react-icons/fa";
+import "../Header.css"
 
 function Header()
 {
@@ -19,40 +20,48 @@ function Header()
         <div>
             {/* Navbar  */}
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand><Link to="/">Data Harvester 9000</Link></Navbar.Brand>
+            <Navbar.Brand><Link className="text-link" to="/">Data Harvester 9000</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
                 <NavDropdown title="Services" id="collapsable-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
+                <NavDropdown.Item>
+                    <Link className="text-link" to="/data-browser">
                     Data Browser
+                    </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
+                <NavDropdown.Item>
+                    <Link className="text-link" to="/data-uploader">
                     Data Uploader
+                    </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Data Auctionhouse</NavDropdown.Item>
+                <NavDropdown.Item>Data Auctionhouse</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="#pricing">Pricing</Nav.Link>
                 <NavDropdown title="About" id="collapsable-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
+                <NavDropdown.Item>
                     FAQ
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
+                <NavDropdown.Item>
+                    <Link className="text-link" to="/tos">
                     Terms and Conditions
+                    </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                    <Link to="/about">
+                    <Link className="text-link" to="/about">
                     About Us
                     </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">
+                <NavDropdown.Item>
+                    <Link className="text-link" to="/careers">
                     Careers
+                    </Link>
                 </NavDropdown.Item>
                 </NavDropdown>
             </Nav>
             <Nav>
-                <Nav.Link href="#deets">For Enterprise</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
+                <Nav.Link>For Enterprise</Nav.Link>
+                <Nav.Link eventKey={2}>
                 Cart <FaShoppingCart/ >
                 </Nav.Link>
             </Nav>

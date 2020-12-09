@@ -23,6 +23,7 @@ class Forms extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      validated: false,
       first_name: "",
       last_name: "",
       blood_type: "",
@@ -30,7 +31,7 @@ class Forms extends React.Component {
       gender: "",
       creditCard: "",
       phoneNumber: "",
-      race: "",
+      race: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -43,25 +44,39 @@ class Forms extends React.Component {
     });
   }
 
-  handleClick() {
+  handleClick(event) {
+
+    const form = event.currentTarget;
+    if(form.checkValidity() === false)
+    {
+
+      event.preventDefault();
+      event.stopPropagation();
+
+    }
+
+    this.state.validated = true;
+
     if (
       this.state.first_name.length > 0 && 
       this.state.last_name.length > 0 &&
-      Number(this.state.age) > 0 &&
+      parseInt(this.state.age) > 0 &&
       this.state.blood_type.length > 0 &&
-      this.
+      this.state.phoneNumber.length > 0 &&
+      this.state.gender.length > 0 &&
+      this.state.race.length > 0
       ) {
       // list out the conditions
-      let json = {
-        first_name: this.state.first_name,
-        last_name: this.state.last_name,
-        age: this.state.age,
-        blood_type: this.state.blood_type,
-        phone_number: this.state.phoneNumber,
-        gender: this.state.gender,
-        race: this.state.race
-   
-      };
+        let json = {
+          first_name: this.state.first_name,
+          last_name: this.state.last_name,
+          age: this.state.age,
+          blood_type: this.state.blood_type,
+          phone_number: this.state.phoneNumber,
+          gender: this.state.gender,
+          race: this.state.race
+    
+        };
 
       fetch("http://localhost:8000/harvester/", {
         method: 'POST',
@@ -75,9 +90,17 @@ class Forms extends React.Component {
           console.log("Missing a required field in payload")
         }
         else if(res.status === 201) {
-          console.log("Created")
+          console.log("Created");
 
           // Anthony: Do page refresh or clear inputs/state here
+          this.state.first_name = "";
+          this.state.last_name = "";
+          this.state.blood_type = "";
+          this.state.age = "";
+          this.state.gender = "";
+          this.state.creditCard = "";
+          this.state.phoneNumber = "";
+          this.state.race = "";
 
         }
       }).catch((e) => {
@@ -86,6 +109,9 @@ class Forms extends React.Component {
       })
 
     }
+    else {
+      alert("Invalid Inputs please check")
+    }
   }
 
   render() {
@@ -93,130 +119,192 @@ class Forms extends React.Component {
       <div className="divForms">
         <h1 className="headerForms">Forms</h1>
         <br />
-        <Form.Group className="groupForms">
-          <Form.Row>
-            <Form.Label column="sm" lg={2} className="labelForms">
-              Name:
-            </Form.Label>
-            <Col id="FormsCell">
-              <Form.Control
-                size="sm"
-                type="text"
-                placeholder="First"
-                className="controlForms"
-                name="first_name"
-                onChange={this.handleChange}
-                value={this.state.first_name}
-              />
-            </Col>
-            <Col id="FormsCell">
-              <Form.Control
-                size="sm"
-                type="text"
-                placeholder="Last"
-                className="controlForms"
-                name="last_name"
-                onChange={this.handleChange}
-                value={this.state.last_name}
-              />
-            </Col>
-            <Form.Label column="sm" lg={2} className="labelForms">
-              Age:
-            </Form.Label>
-            <Col id="FormsCell">
-              <Form.Control
-                size="sm"
-                type="text"
-                placeholder="Age"
-                className="controlForms"
-                name="age"
-                onChange={this.handleChange}
-                value={this.state.age}
-              />
-            </Col>
-          </Form.Row>
-        </Form.Group>
-        <Form.Group className="groupForms">
-          <Form.Row>
-            <Form.Label column="sm" lg={2} className="labelForms">
-              Blood Type:
-            </Form.Label>
-            <Col id="FormsCell">
-              <Form.Control
-                size="sm"
-                type="text"
-                placeholder="Type"
-                className="controlForms"
-                name="blood_type"
-                onChange={this.handleChange}
-                value={this.state.blood_type}
-              />
-            </Col>
-          </Form.Row>
-        </Form.Group>
-        <Form.Group className="groupForms">
-          <Form.Row>
-            <Form.Label column="sm" lg={2} className="labelForms">
-              Phone Number:
-            </Form.Label>
-            <Col id="FormsCell">
-              <Form.Control
-                size="sm"
-                type="text"
-                placeholder="Cell"
-                className="controlForms"
-                name="phoneNumber"
-                onChange={this.handleChange}
-                value={this.state.phoneNumber}
-              />
-            </Col>
-          </Form.Row>
-        </Form.Group>
-        <Form.Group className-="groupForms">
-          <Form.Row>
-            <Form.Label as="legend" column sm={2} className="labelForms">
-              Radios:
-            </Form.Label>
-            {/* this this */}
-            <Col sm={10}>
-              <Form.Check
-                type="radio"
-                label="Male"
-                className="bubbleFills"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios1"
-              />
-              <Form.Check
-                type="radio"
-                label="Female"
-                className="bubbleFills"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios2"
-              />
-              <Form.Check
-                type="radio"
-                label="Other"
-                className="bubbleFills"
-                name="formHorizontalRadios"
-                id="formHorizontalRadios3"
-              />
-            </Col>
-            <Form.Label column="sm" lg={2} className="labelForms">
-              Credit Card:
-            </Form.Label>
-            <Col id="FormsCell">
-              <Form.Control
-                size="sm"
-                type="text"
-                placeholder="Credit/Debt"
-                className="controlForms"
-                name="creditCard"
-                onChange={this.handleChange}
-                value={this.state.creditCard}
-              />
-            </Col>
-          </Form.Row>
-        </Form.Group>
+        <Form>
+          <Form.Group controlId="name" className="groupForms">
+            <Form.Row>
+              <Col>
+                <Form.Label className="labelForms" column="sm">
+                  Name
+                </Form.Label>
+              </Col>
+              <Col>
+                <Form.Control
+                  size="sm"
+                  type="text"
+                  placeholder="First"
+                  className="controlForms"
+                  name="first_name"
+                  onChange={this.handleChange}
+                  value={this.state.first_name}
+                />
+              </Col>
+              <Col>
+                <Form.Control
+                  size="sm"
+                  type="text"
+                  placeholder="Last"
+                  className="controlForms"
+                  name="last_name"
+                  onChange={this.handleChange}
+                  value={this.state.last_name}
+                />
+              </Col>
+            </Form.Row>
+          </Form.Group>
+
+          <Form.Group controlId="age" className="groupForms">
+            <Form.Row>
+              <Col>
+                <Form.Label className="labelForms" column="sm">
+                  Age
+                </Form.Label>
+              </Col>
+              <Col>
+                <Form.Control
+                  size="sm"
+                  type="number"
+                  placeholder="Age"
+                  className="controlForms"
+                  name="age"
+                  onChange={this.handleChange}
+                  value={this.state.age}
+                />
+              </Col>
+            </Form.Row>
+          </Form.Group>
+
+          <Form.Group controlId="blood" className="groupForms">
+            <Form.Row>
+              <Col>
+                <Form.Label column="sm" className="labelForms">
+                  Blood Type
+                </Form.Label>
+              </Col>
+              <Col>
+                <Form.Control
+                  size="sm"
+                  type="text"
+                  placeholder="Blood Type"
+                  className="controlForms"
+                  name="blood_type"
+                  onChange={this.handleChange}
+                  value={this.state.blood_type}
+                />
+              </Col>
+            </Form.Row>
+          </Form.Group>
+
+          <Form.Group controlId="phone" className="groupForms">
+            <Form.Row>
+              <Col>
+                <Form.Label column="sm" className="labelForms">
+                  Phone Number
+                </Form.Label>
+              </Col>
+              <Col>
+                <Form.Control
+                  size="sm"
+                  type="text"
+                  placeholder="Mobile Phone Number"
+                  className="controlForms"
+                  name="phoneNumber"
+                  onChange={this.handleChange}
+                  value={this.state.phoneNumber}
+                />
+              </Col>
+            </Form.Row>
+          </Form.Group>
+
+          <Form.Group controlId="gender" className="groupForms">
+            <Form.Row>
+              <Col>
+                <Form.Label as="legend" column="sm" className="labelForms">
+                  Gender
+                </Form.Label>
+              </Col>
+              <Col>
+                <Form.Check
+                  type="radio"
+                  label="Male"
+                  className="bubbleFills"
+                  name="gender"
+                  id="gender1"
+                  onChange={this.handleChange}
+                  value={this.state.gender}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Female"
+                  className="bubbleFills"
+                  name="gender"
+                  id="gender2"
+                  onChange={this.handleChange}
+                  value={this.state.gender}
+                />
+                <Form.Check
+                  type="radio"
+                  label="Other"
+                  className="bubbleFills"
+                  name="gender"
+                  id="gender3"
+                  onChange={this.handleChange}
+                  value={this.state.gender}
+                />
+              </Col>
+            </Form.Row>
+          </Form.Group>
+
+          <Form.Group controlId="creditcard" className="groupForms">
+            <Form.Row>
+              <Col>
+                <Form.Label column="sm" className="labelForms">
+                  Credit Card
+                </Form.Label>
+              </Col>
+              <Col>
+                <Form.Control
+                  size="sm"
+                  type="text"
+                  placeholder="Credit/Debit"
+                  className="controlForms"
+                  name="creditCard"
+                  onChange={this.handleChange}
+                  value={this.state.creditCard}
+                />
+              </Col>
+            </Form.Row>
+          </Form.Group>
+
+          <Form.Group controlId="race" className="groupForms">
+            <Form.Row>
+              <Col>
+                <Form.Label column="sm" className="labelForms">Race</Form.Label>
+              </Col>
+              <Col>
+                <Form.Control 
+                  as="select" 
+                  className="controlForms" 
+                  size="sm" 
+                  defaultValue="Choose..."
+                >
+                  <option>Choose...</option>
+                  <option>Asian</option>
+                  <option>White</option>
+                  <option>Black or African American</option>
+                  <option>Hispanic/Latino</option>
+                  <option>Native American or Alaska Native</option>
+                  <option>Native Hawaiian or Other Pacific Islander</option>
+                  <option>Other</option>
+                </Form.Control>
+              </Col>
+            </Form.Row>
+          </Form.Group>
+
+          <Button variant="outline-danger" type="submit" onClick={this.handleClick}>
+            Submit
+          </Button>
+
+        </Form>
         {/* <h1 style={{color:"#FFFFFF"}}>{this.state.first_name}</h1> */}
         <div myClass="form-input-container">
           <label for="form-race" myClass="labelForms">Race</label>
@@ -225,16 +313,27 @@ class Forms extends React.Component {
               <option selected value={this.state.race}>Other</option>
               <option>Asian</option>
               <option>White</option>
-              <option>Black</option>
+              <option>Black or African American</option>
               <option>Hispanic/Latino</option>
-              <option>Native American</option>
+              <option>Native American or Alaska Native</option>
+              <option>Native Hawaiian or Other Pacific Islander</option>
               <option>Other</option>
             </select>
           </div>
         </div>
-        <Button variant="outline-danger" onClick={this.handleClick}>
+        {/* <Button variant="outline-danger" onClick={this.handleClick}>
           Submit
-        </Button>{" "}
+        </Button>{" "} */}
+        {/* // <h1 style={{color:"#FFFFFF"}}>{ */}
+        {/* //   this.state.first_name.length > 0 && 
+        //   this.state.last_name.length > 0 &&
+        //   parseInt(this.state.age) > 0 &&
+        //   this.state.blood_type.length > 0 &&
+        //   this.state.phoneNumber.length > 0 &&
+        //   this.state.gender.length > 0 &&
+        //   this.state.race.length > 0
+        // }</h1> */}
+        <h1 style={{color:"#FFFFFF"}}> gender: {this.state.gender.length > 0 ? "true" : "false"}</h1>
       </div>
     );
   }

@@ -17,13 +17,13 @@ function Home()
         },
         {
 
-            original: '../DataHarvester.jpeg',
+            original: 'https://raw.githubusercontent.com/osu-cs290-f20/final-project-team-15/master/front-end/src/DataHarvester.jpeg?token=AKQJOARBLLABYPNZHTCYYGK73GW2A',
             description: 'We are an all inclusive retailer. We accept not just your data, but your friends and families as well.'
 
         },
         {
 
-            original: 'https://static.wikia.nocookie.net/gtawiki/images/3/3a/PoliceComputer-GTAIV-PoliceRecord.jpg/revision/latest/top-crop/width/220/height/220?cb=20161121222936',
+            original: 'https://i.imgur.com/lIslWHB.png',
             description: 'Get dirt on anybody! *For a small price'
 
         },
@@ -39,7 +39,7 @@ function Home()
     return (
 
         <div>
-            <ImageGallery items={imgs} showFullscreenButton={false} showPlayButton={false} showThumbnails={false} />
+            <ImageGallery items={imgs} showFullscreenButton={false} showPlayButton={false} showThumbnails={false} autoPlay={true} />
 
             <UserReview />
         </div>
