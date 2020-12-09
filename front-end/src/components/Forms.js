@@ -20,8 +20,8 @@ import "../Forms.css";
 
 // form -> after on click on sumbit botton  -> add each value of each input into json
 class Forms extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       first_name: "",
       last_name: "",
@@ -33,6 +33,7 @@ class Forms extends React.Component {
       race: "",
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   // methods
   handleChange(event) {
@@ -43,7 +44,13 @@ class Forms extends React.Component {
   }
 
   handleClick() {
-    if (this.state.first_name) {
+    if (
+      this.state.first_name.length > 0 && 
+      this.state.last_name.length > 0 &&
+      Number(this.state.age) > 0 &&
+      this.state.blood_type.length > 0 &&
+      this.
+      ) {
       // list out the conditions
       let json = {
         first_name: this.state.first_name,
@@ -53,11 +60,31 @@ class Forms extends React.Component {
         phone_number: this.state.phoneNumber,
         gender: this.state.gender,
         race: this.state.race
-        /*
-      gender
-      race
-      */
+   
       };
+
+      fetch("http://localhost:8000/harvester/", {
+        method: 'POST',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(json)
+      }).then((res) => {
+      
+        if(res.status === 500) {
+          console.log("Missing a required field in payload")
+        }
+        else if(res.status === 201) {
+          console.log("Created")
+
+          // Anthony: Do page refresh or clear inputs/state here
+
+        }
+      }).catch((e) => {
+        // Something didn't work
+        console.log(e);
+      })
+
     }
   }
 
@@ -192,10 +219,10 @@ class Forms extends React.Component {
         </Form.Group>
         {/* <h1 style={{color:"#FFFFFF"}}>{this.state.first_name}</h1> */}
         <div myClass="form-input-container">
-          <label for="form-race" myClass="form-input-label">Race</label>
+          <label for="form-race" myClass="labelForms">Race</label>
           <div myClass="form-input-element">
-            <select id="form-race" myClass="form-input" name="form-race">
-              <option selected value="">Other</option>
+            <select id="form-race" myClass="form-input" name="race" onChange={this.handleChange}>
+              <option selected value={this.state.race}>Other</option>
               <option>Asian</option>
               <option>White</option>
               <option>Black</option>
