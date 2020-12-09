@@ -34,4 +34,6 @@
     /* padding: 10px; */
     justify-content: space-around;
     flex-direction: row;
+    position: relative;
+    top: 0px;
 }
