@@ -1,39 +1,74 @@
-.div {
+.divForms {
   padding: 10px;
   margin: 10px;
   display: flex;
   background-color: #242526;
   border-radius: 10px;
   width: 300px;
-  height: 500px;
+  height: 600px;
   flex-direction: column;
   font-family: "Archivo", sans-serif;
 }
 
-.header {
+.headerForms {
   color: #ffffff;
-  padding: 10px;
+  text-align: center;
   font-family: "Archivo", sans-serif;
 }
 
-.control {
+.controlForms {
   font-family: "Archivo", sans-serif;
   width: 100px;
-  height: 20px;
-  padding: 5px;
-  margin: 5px;
-  flex: inline-flex;
-  flex-direction: row;
+  height: 25px;
+  padding: 10px;
+  text-align: left;
 }
 
-.label {
+.labelForms {
   font-family: "Archivo", sans-serif;
   color: #ffffff;
-  height: 20px;
+  height: 45px;
+  width: 200px;
+  margin-left: 1.5px;
+  margin-bottom: 2px;
+  float: left;
+  padding: 13px;
 }
 
-.group {
+.groupForms {
   font-family: "Archivo", sans-serif;
   display: inline-flex;
   flex-direction: column;
+  float: right;
+  margin-bottom: 0.5rem;
+}
+
+.bubbleFills {
+  color:  #ffffff;
+  font-family: "Archive", sans-serif;
+  text-align: left;
+  display: inline;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin: 5px;
+}
+
+#FormsCell {
+  height: 25px;
+  width: 80px;
+  text-align: left;
+  margin: 10px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  margin-top: 15px;
+  border: 5px;
+  flex: flex;
+  flex-direction: column;
+}
+
+.filter-input-container {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
 }

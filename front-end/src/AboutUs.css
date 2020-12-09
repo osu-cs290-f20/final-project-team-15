@@ -1,6 +1,28 @@
 p {
-
     color: white;
     font-family: 'Archivo', sans-serif;
+}
 
+#ParaStyle {
+    color: black;
+    font-family: "Archive", sans-serif;
+    margin: 20px;
+    padding: 25px;
+}
+
+.ParaContainer {
+    height: auto;
+    width: auto;
+    border: 100px;
+    margin: 100px;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    background-color: transparent;
+    border-radius: 5px;
+    text-align: center;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }

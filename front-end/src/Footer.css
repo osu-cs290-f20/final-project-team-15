@@ -1,15 +1,20 @@
 #icons {
 
-    background-color: #6b2823;
-    size: 50px;
-
+    background-color: white;
+    height: 50px;
+    width: 45px;
+    padding: 5px;
+    margin: 2px;
+    justify-content: center;
+    border-radius: 50px;
+    border-style: solid white;
 }
 
 .header {
 
     font-family: "Archivo", sans-serif;
     color: white;
-
+    text-align: center;
 }
 
 .listText
@@ -17,12 +22,15 @@
 
     font-family: "Archivo", sans-serif;
     color: white;
+    text-align: center;
 
 }
 
 .div {
-
+    height: 200px;
+    width: 95%;
     display: flex;
+    margin: 10px;
     justify-content: space-around;
-
+    flex-direction: row;
 }

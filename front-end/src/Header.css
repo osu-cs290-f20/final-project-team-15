@@ -1,0 +1,20 @@
+.text-link {
+
+    color: inherit;
+    text-decoration: inherit;
+
+}
+
+.text-link:hover {
+
+    text-decoration: inherit;
+    color: inherit;
+
+}
+
+#test {
+
+    color: black;
+    text-decoration: none;
+
+}

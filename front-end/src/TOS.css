@@ -1,0 +1,24 @@
+.TermsStyle {
+    color: black;
+    font-family: "Archivo", sans-serif;
+    text-align: center;
+}
+
+.TOSparagraph {
+    color: black;
+    font-family: "Archivo", sans-serif;
+    text-align: center;
+}
+
+#TermsHeader {
+    font-family: "Archive", sans-serif;
+    text-align: center;
+    font-size: 80px;
+}
+
+#TermsTitle {
+    font-family: "Archive", sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin: 20px;
+}
