@@ -63,60 +63,63 @@ class Forms extends React.Component {
 
   render() {
     return (
-      <div className="div">
-        <h1 className="header">Forms</h1>
+      <div className="divForms">
+        <h1 className="headerForms">Forms</h1>
         <br />
-        <Form.Group className="group">
+        <Form.Group className="groupForms">
           <Form.Row>
-            {/* name */}
-            <Form.Label column="sm" lg={2} className="label">
+            <Form.Label column="sm" lg={2} className="labelForms">
               Name:
             </Form.Label>
-            <Col>
+            <Col id="FormsCell">
               <Form.Control
                 size="sm"
                 type="text"
                 placeholder="First"
-                className="control"
+                className="controlForms"
                 name="first_name"
                 onChange={this.handleChange}
                 value={this.state.first_name}
               />
             </Col>
-            <Col>
+            <Col id="FormsCell">
               <Form.Control
                 size="sm"
                 type="text"
                 placeholder="Last"
-                className="control"
+                className="controlForms"
                 name="last_name"
                 onChange={this.handleChange}
                 value={this.state.last_name}
               />
             </Col>
-            <Form.Label column="sm" lg={2} className="label">
+            <Form.Label column="sm" lg={2} className="labelForms">
               Age:
             </Form.Label>
-            <Col>
+            <Col id="FormsCell">
               <Form.Control
                 size="sm"
                 type="text"
                 placeholder="Age"
-                className="control"
-                name="last_name"
+                className="controlForms"
+                name="age"
                 onChange={this.handleChange}
                 value={this.state.age}
               />
             </Col>
-            <Form.Label column="sm" lg={2} className="label">
+          </Form.Row>
+        </Form.Group>
+        <Form.Group className="groupForms">
+          <Form.Row>
+            <Form.Label column="sm" lg={2} className="labelForms">
               Blood Type:
             </Form.Label>
-            <Col>
+            <Col id="FormsCell">
               <Form.Control
                 size="sm"
                 type="text"
                 placeholder="Type"
-                className="control"
+                className="controlForms"
                 name="blood_type"
                 onChange={this.handleChange}
                 value={this.state.blood_type}
@@ -124,55 +127,62 @@ class Forms extends React.Component {
             </Col>
           </Form.Row>
         </Form.Group>
-        <Form.Group>
+        <Form.Group className="groupForms">
           <Form.Row>
-            <Form.Label column="sm" lg={2} className="label">
+            <Form.Label column="sm" lg={2} className="labelForms">
               Phone Number:
             </Form.Label>
-            <Col>
+            <Col id="FormsCell">
               <Form.Control
                 size="sm"
                 type="text"
-                placeholder="Type"
-                className="control"
+                placeholder="Cell"
+                className="controlForms"
                 name="phoneNumber"
                 onChange={this.handleChange}
                 value={this.state.phoneNumber}
               />
             </Col>
-            <Form.Label as="legend" column sm={2}>
-              Radios
+          </Form.Row>
+        </Form.Group>
+        <Form.Group className-="groupForms">
+          <Form.Row>
+            <Form.Label as="legend" column sm={2} className="labelForms">
+              Radios:
             </Form.Label>
             {/* this this */}
             <Col sm={10}>
               <Form.Check
                 type="radio"
                 label="Male"
+                className="bubbleFills"
                 name="formHorizontalRadios"
                 id="formHorizontalRadios1"
               />
               <Form.Check
                 type="radio"
                 label="Female"
+                className="bubbleFills"
                 name="formHorizontalRadios"
                 id="formHorizontalRadios2"
               />
               <Form.Check
                 type="radio"
                 label="Other"
+                className="bubbleFills"
                 name="formHorizontalRadios"
                 id="formHorizontalRadios3"
               />
             </Col>
-            <Form.Label column="sm" lg={2} className="label">
+            <Form.Label column="sm" lg={2} className="labelForms">
               Credit Card:
             </Form.Label>
-            <Col>
+            <Col id="FormsCell">
               <Form.Control
                 size="sm"
                 type="text"
-                placeholder="Type"
-                className="control"
+                placeholder="Credit/Debt"
+                className="controlForms"
                 name="creditCard"
                 onChange={this.handleChange}
                 value={this.state.creditCard}
@@ -181,6 +191,20 @@ class Forms extends React.Component {
           </Form.Row>
         </Form.Group>
         {/* <h1 style={{color:"#FFFFFF"}}>{this.state.first_name}</h1> */}
+        <div myClass="form-input-container">
+          <label for="form-race" myClass="form-input-label">Race</label>
+          <div myClass="form-input-element">
+            <select id="form-race" myClass="form-input" name="form-race">
+              <option selected value="">Other</option>
+              <option>Asian</option>
+              <option>White</option>
+              <option>Black</option>
+              <option>Hispanic/Latino</option>
+              <option>Native American</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
         <Button variant="outline-danger" onClick={this.handleClick}>
           Submit
         </Button>{" "}
