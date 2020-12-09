@@ -20,8 +20,8 @@ import "../Forms.css";
 
 // form -> after on click on sumbit botton  -> add each value of each input into json
 class Forms extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       first_name: "",
       last_name: "",
@@ -33,6 +33,7 @@ class Forms extends React.Component {
       race: "",
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   // methods
   handleChange(event) {
@@ -53,11 +54,34 @@ class Forms extends React.Component {
         phone_number: this.state.phoneNumber,
         gender: this.state.gender,
         race: this.state.race
-        /*
+      /*
       gender
       race
       */
       };
+
+      fetch("http://localhost:8000/harvester/", {
+        method: 'POST',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(json)
+      }).then((res) => {
+      
+        if(res.status === 500) {
+          console.log("Missing a required field in payload")
+        }
+        else if(res.status === 201) {
+          console.log("Created")
+
+          // Anthony: Do page refresh or clear inputs/state here
+
+        }
+      }).catch((e) => {
+        // Something didn't work
+        console.log(e);
+      })
+
     }
   }
 
@@ -103,7 +127,7 @@ class Forms extends React.Component {
                 type="text"
                 placeholder="Age"
                 className="control"
-                name="last_name"
+                name="age"
                 onChange={this.handleChange}
                 value={this.state.age}
               />
