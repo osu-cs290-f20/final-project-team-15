@@ -35,7 +35,7 @@ class Forms extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleRadioChange = this.handleRadioChange.bind(this);
   }
   // methods
   handleChange(event) {
@@ -45,19 +45,13 @@ class Forms extends React.Component {
     });
   }
 
-  handleSubmit(event)
-  {
+  handleRadioChange(event) {
 
-    const form = event.currentTarget;
-    if(form.checkValidity() === false)
-    {
+    this.setState({
 
-      event.preventDefault();
-      event.stopPropagation();
+      gender: event.target.value
 
-    }
-
-    this.state.validated = true;
+    })
 
   }
 
@@ -72,7 +66,11 @@ class Forms extends React.Component {
 
     }
 
-    this.state.validated = true;
+    this.setState({
+
+      validated: true
+
+    })
 
     // if (
     //   this.state.first_name.length > 0 && 
@@ -138,7 +136,7 @@ class Forms extends React.Component {
       <div className="divForms">
         <h1 className="headerForms">Forms</h1>
         <br />
-        <Form noValidate validated={this.state.validated} onSubmit={this.handleSubmit}>
+        <Form noValidate validated={this.state.validated} onSubmit={this.handleClick}>
           <Form.Group controlId="name" className="groupForms">
             <Form.Row>
               <Col>
@@ -155,7 +153,7 @@ class Forms extends React.Component {
                   className="controlForms"
                   name="first_name"
                   onChange={this.handleChange}
-                  value={this.state.first_name}
+                  // value={this.state.first_name}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter your first name.
@@ -170,7 +168,7 @@ class Forms extends React.Component {
                   className="controlForms"
                   name="last_name"
                   onChange={this.handleChange}
-                  value={this.state.last_name}
+                  //value={this.state.last_name}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter your last name.
@@ -195,7 +193,7 @@ class Forms extends React.Component {
                   className="controlForms"
                   name="age"
                   onChange={this.handleChange}
-                  value={this.state.age}
+                  //value={this.state.age}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter your age.
@@ -220,7 +218,7 @@ class Forms extends React.Component {
                   className="controlForms"
                   name="blood_type"
                   onChange={this.handleChange}
-                  value={this.state.blood_type}
+                  //value={this.state.blood_type}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter a blood type.
@@ -245,7 +243,7 @@ class Forms extends React.Component {
                   className="controlForms"
                   name="phoneNumber"
                   onChange={this.handleChange}
-                  value={this.state.phoneNumber}
+                  //value={this.state.phoneNumber}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter a mobile phone number.
@@ -263,31 +261,32 @@ class Forms extends React.Component {
               </Col>
               <Col>
                 <Form.Check
+                  defaultChecked
                   type="radio"
                   label="Male"
                   className="bubbleFills"
                   name="gender"
-                  id="gender1"
-                  onChange={this.handleChange}
-                  value={this.state.gender}
+                  id="Male"
+                  onChange={this.handleRadioChange}
+                  value="Male"
                 />
                 <Form.Check
                   type="radio"
                   label="Female"
                   className="bubbleFills"
                   name="gender"
-                  id="gender2"
-                  onChange={this.handleChange}
-                  value={this.state.gender}
+                  id="Female"
+                  onChange={this.handleRadioChange}
+                  value="Female"
                 />
                 <Form.Check
                   type="radio"
                   label="Other"
                   className="bubbleFills"
                   name="gender"
-                  id="gender3"
-                  onChange={this.handleChange}
-                  value={this.state.gender}
+                  id="Other"
+                  onChange={this.handleRadioChange}
+                  value="Other"
                 />
               </Col>
             </Form.Row>
@@ -309,7 +308,7 @@ class Forms extends React.Component {
                   className="controlForms"
                   name="creditCard"
                   onChange={this.handleChange}
-                  value={this.state.creditCard}
+                  //value={this.state.creditCard}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter a credit card number.
@@ -332,7 +331,6 @@ class Forms extends React.Component {
                   defaultValue="Choose..."
                   name="race" 
                   onChange={this.handleChange}
-                  value={this.state.creditCard}
                 >
                   <option>Choose...</option>
                   <option>Asian</option>
@@ -350,41 +348,14 @@ class Forms extends React.Component {
             </Form.Row>
           </Form.Group>
 
-          <Button variant="outline-danger" type="submit" /* onClick={this.handleClick} */>
+          <Button variant="outline-danger" type="submit">
             Submit
           </Button>
 
         </Form>
-        {/* <h1 style={{color:"#FFFFFF"}}>{this.state.first_name}</h1> */}
-        {/* <div myClass="form-input-container">
-          <label for="form-race" myClass="labelForms">Race</label>
-          <div myClass="form-input-element">
-            <select id="form-race" myClass="form-input" name="race" onChange={this.handleChange}>
-              <option selected value={this.state.race}>Other</option>
-              <option>Asian</option>
-              <option>White</option>
-              <option>Black or African American</option>
-              <option>Hispanic/Latino</option>
-              <option>Native American or Alaska Native</option>
-              <option>Native Hawaiian or Other Pacific Islander</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div> */}
-        {/* <Button variant="outline-danger" onClick={this.handleClick}>
-          Submit
-        </Button>{" "} */}
-        {/* // <h1 style={{color:"#FFFFFF"}}>{ */}
-        {/* //   this.state.first_name.length > 0 && 
-        //   this.state.last_name.length > 0 &&
-        //   parseInt(this.state.age) > 0 &&
-        //   this.state.blood_type.length > 0 &&
-        //   this.state.phoneNumber.length > 0 &&
-        //   this.state.gender.length > 0 &&
-        //   this.state.race.length > 0
-        // }</h1> */}
-        {/* gender, race doesnt work check again */}
-        <h1 style={{color:"#FFFFFF"}}> gender: {this.state.race.length > 0 ? "true" : "false"}</h1>
+       
+        {/* <h1 style={{color:"#FFFFFF"}}> gender: {this.state.gender.length > 0 ? "true" : "false"}</h1>
+        <h1 style={{color:"#FFFFFF"}}> Test value: {this.state.gender}</h1> */}
       </div>
     );
   }

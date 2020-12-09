@@ -8,9 +8,22 @@ class CareersPage extends React.Component {
 
       return (
         <div>
-            <MDBView>
-
-            </MDBView>   
+            <MDBContainer>
+                <MDBRow>
+                    <MDBCol lg="6">
+                        <div className="profile">
+                        <MDBCol lg="6">
+                            <MDBView waves>
+                            <img 
+                                src="https://cdn.discordapp.com/attachments/774021123591372800/786095130326990879/Anthonyface.jpg" 
+                                className="img-fluid" 
+                                alt="" />
+                            </MDBView>
+                        </MDBCol>
+                        </div>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
         </div>
       )
 
