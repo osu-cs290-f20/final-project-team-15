@@ -114,13 +114,13 @@ class TermsAndConditions extends React.Component {
                     </p>
                 </div>
                 <Link className="text-link" to="/">
-                    <Button variant="outline-success">
+                    <Button variant="outline-success" id="TOSbutton">
                     Agree to Terms
                     </Button>{" "}
                 {/* Link to 404 page for disagree */}
                 </Link>
                 <Link className="text-link" to="/404">
-                    <Button variant="outline-danger">
+                    <Button variant="outline-danger" id="TOSbutton">
                     Disagree to Terms
                     </Button>{" "}
                 </Link>

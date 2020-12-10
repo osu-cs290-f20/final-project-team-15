@@ -1,12 +1,13 @@
-.div {
-  /* padding: 10px;
-  margin: 10px; */
+.divFilter {
+  padding: 10px;
+  margin: 10px; 
   background-color: #242526;
-  /* display: flex;
-  width: 300px;
+  display: flex;
+  
+  /* width: 300px;
   border-radius: 10px;
-  height: 500px;
-  flex-direction: column; */
+  height: 500px; */
+  flex-direction: column;
 }
 
 .header {
@@ -44,3 +45,12 @@
   margin: 20px;
   padding: 10px; */
 }
+
+.blood-type, .race {
+  color: white;
+  font-family: "Archivo", sans-serif;
+}
+
+/* .groupForms {
+  height: 500px;
+} */

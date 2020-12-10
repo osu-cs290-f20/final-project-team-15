@@ -62,16 +62,6 @@ class Forms extends React.Component {
       validated: true,
     });
 
-    // if (
-    //   this.state.first_name.length > 0 &&
-    //   this.state.last_name.length > 0 &&
-    //   parseInt(this.state.age) > 0 &&
-    //   this.state.blood_type.length > 0 &&
-    //   this.state.phoneNumber.length > 0 &&
-    //   this.state.gender.length > 0 &&
-    //   this.state.race.length > 0 &&
-    //   this.state.creditCard > 0
-    //   ) {
     // list out the conditions
     let json = {
       first_name: this.state.first_name,
@@ -114,10 +104,6 @@ class Forms extends React.Component {
         console.log(e);
       });
 
-    //}
-    // else {
-    //   //alert("Invalid Inputs please check")
-    // }
   }
 
   render() {

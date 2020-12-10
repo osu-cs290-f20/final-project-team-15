@@ -2,6 +2,7 @@
     color: white;
     font-family: "Archivo", sans-serif;
     text-align: center;
+    padding: 100px;
 }
 
 .TOSparagraph {
@@ -9,6 +10,11 @@
     font-family: "Archivo", sans-serif;
     text-align: center;
     font-size: 18px;
+    padding: 10px;
+}
+
+#TOSbutton {
+    margin: 5px;
     padding: 10px;
 }
 
@@ -28,7 +34,7 @@
 
 #TermsHeader {
     font-family: "Archive", sans-serif;
-    color: #E50000;
+    color: #white;
     text-align: center;
     font-size: 80px;
 }

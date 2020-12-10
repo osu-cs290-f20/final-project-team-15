@@ -37,7 +37,7 @@ function Header()
                 </NavDropdown.Item>
                 <NavDropdown.Item>Data Auctionhouse</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                <Nav.Link><Link className="text-link" to="/pricing">Pricing</Link></Nav.Link>
                 <NavDropdown title="About" id="collapsable-nav-dropdown">
                 <NavDropdown.Item>
                     FAQ

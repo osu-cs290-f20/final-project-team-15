@@ -3,39 +3,55 @@
   font-family: "Archivo", sans-serif;
 }
 
-.img-fluid {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
-  float: left;
-}
-
-.CareersText {
+.careers-header {
   color: white;
+  font-family: "Archivo", sans-serif;
   text-align: center;
+  font-size: 50px;
+  margin-top: 35px;
 }
 
-.card {
+.page-title {
+  color: white;
+  font-family: "Archivo", sans-serif;
+  text-align: center;
+  font-size: 80px;
 }
 
 .profile-title {
+  font-family: "Archivo", sans-serif;
   color: white;
 }
 
 .profile-text {
+  font-family: "Archivo", sans-serif;
   color: white;
 }
 
 .profile-body {
+  background-color: #3a3b3c;
+  border: none;
+}
+
+.career-container {
+  font-family: "Archivo", sans-serif;
+  margin: 15px;
+}
+
+.career-team {
+  font-family: "Archivo", sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+
+#github-icon {
   color: white;
+  height: 50px;
+  weight: 50px;
+  padding: 10px;
+  margin: 10px;
 }
 
-.view-overlay {
-  max-height: 400px;
-  max-width: 400px;
-  margin: 0px 0px 100px 0px;
-}
-
-.profile {
+.button {
+  margin: 10px;
 }

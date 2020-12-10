@@ -40,9 +40,7 @@ const fontStyle = {
     margin: 10,
     display: "inline-flex",
     color: "#FFFFFF",
-    //backgroundColor: "#C0C0C0",
     borderRadius: 10
-    // WHAT UP CUDDIE
 };
 
 const reviewerStyle = {

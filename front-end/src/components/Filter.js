@@ -4,21 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import mockData from "../mockdata.json";
 import "../Filter.css";
 
-function Filter(props) {
-  const [ageMin, setAgeMin] = useState(0);
-  const [ageMax, setAgeMax] = useState(0);
-
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+function Filter({setFirstName, setLastName, setAgeMin, setAgeMax, checkedBloodTypes, setPhoneNumber, checkedGenders, setCreditCard, checkedRaces}) {
+  
 
   return (
-    <div className="div">
-      <div>
-        <p>Min Age: {ageMin}</p>
-        <p>Max Age: {ageMax}</p>
-        <p>First Name: {firstName}</p>
-        <p>Last Name: {lastName}</p>
-      </div>
+    <div className="divFilter">
 
       {/* filtering*/}
       <h1 className="header">Filtering</h1>
@@ -34,7 +24,6 @@ function Filter(props) {
             </Col>
             <Col>
               <Form.Control
-                required
                 size="sm"
                 type="text"
                 placeholder="First"
@@ -44,7 +33,6 @@ function Filter(props) {
             </Col>
             <Col>
               <Form.Control
-                required
                 size="sm"
                 type="text"
                 placeholder="Last"
@@ -57,13 +45,15 @@ function Filter(props) {
 
         <Form.Group controlId="ageField" className="group">
           <Form.Row>
-            <Form.Label column="sm" lg={2} className="label">
+            <Col>
+            <Form.Label column="sm" className="label">
               Age Range
             </Form.Label>
+            </Col>
             <Col>
               <Form.Control
                 size="sm"
-                type="text"
+                type="number"
                 placeholder="Min"
                 className="control"
                 onChange={(event) => setAgeMin(event.target.value)}
@@ -72,7 +62,7 @@ function Filter(props) {
             <Col>
               <Form.Control
                 size="sm"
-                type="text"
+                type="number"
                 placeholder="Max"
                 className="control"
                 onChange={(event) => setAgeMax(event.target.value)}
@@ -81,7 +71,7 @@ function Filter(props) {
           </Form.Row>
         </Form.Group>
 
-        <Form.Group controlId="blood" className="groupForms">
+        <Form.Group controlId="bloodTypeCheckBoxes" className="groupForms">
           <Form.Row>
             <Col>
               <Form.Label column="sm" className="labelForms">
@@ -89,24 +79,83 @@ function Filter(props) {
               </Form.Label>
             </Col>
             <Col>
-              <Form.Control
-                required
-                size="sm"
-                type="text"
-                placeholder="Blood Type"
-                className="controlForms"
-                name="blood_type"
-                onChange={this.handleChange}
-                //value={this.state.blood_type}
+              <Form.Check
+                inline
+                className="blood-type"
+                type="checkbox"
+                id="blood"
+                label="A+"
+                value="A+"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
               />
-              <Form.Control.Feedback type="invalid">
-                Please enter a blood type.
-              </Form.Control.Feedback>
+              <Form.Check
+                inline
+                className="blood-type"
+                type="checkbox"
+                id="blood"
+                label="A-"
+                value="A-"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="blood-type"
+                type="checkbox"
+                id="blood"
+                label="B+"
+                value="B+"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="blood-type"
+                type="checkbox"
+                id="blood"
+                label="B-"
+                value="B-"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="blood-type"
+                type="checkbox"
+                id="blood"
+                label="O+"
+                value="O+"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="blood-type"
+                type="checkbox"
+                id="blood"
+                label="O-"
+                value="O-"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="blood-type"
+                type="checkbox"
+                id="blood"
+                label="AB+"
+                value="AB+"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                type="checkbox"
+                id="blood"
+                className="blood-type"
+                label="AB-"
+                value="AB-"
+                onChange={(event) => checkedBloodTypes(event.target.value, event.target.checked)}
+              />
             </Col>
           </Form.Row>
         </Form.Group>
 
-        <Form.Group controlId="phone" className="groupForms">
+        <Form.Group controlId="phoneNumberField" className="groupForms">
           <Form.Row>
             <Col>
               <Form.Label column="sm" className="labelForms">
@@ -115,23 +164,18 @@ function Filter(props) {
             </Col>
             <Col>
               <Form.Control
-                required
                 size="sm"
                 type="text"
                 placeholder="Mobile Phone Number"
                 className="controlForms"
                 name="phoneNumber"
-                onChange={this.handleChange}
-                //value={this.state.phoneNumber}
+                onChange={(event) => setPhoneNumber(event.target.value)}
               />
-              <Form.Control.Feedback type="invalid">
-                Please enter a mobile phone number.
-              </Form.Control.Feedback>
             </Col>
           </Form.Row>
         </Form.Group>
 
-        <Form.Group controlId="gender" className="groupForms">
+        <Form.Group controlId="genderCheckBoxes" className="groupForms">
           <Form.Row>
             <Col>
               <Form.Label as="legend" column="sm" className="labelForms">
@@ -140,38 +184,37 @@ function Filter(props) {
             </Col>
             <Col>
               <Form.Check
-                defaultChecked
-                type="radio"
+                type="checkbox"
                 label="Male"
                 className="bubbleFills"
                 name="gender"
                 id="Male"
-                onChange={this.handleRadioChange}
+                onChange={(event) => checkedGenders(event.target.value, event.target.checked)}
                 value="Male"
               />
               <Form.Check
-                type="radio"
+                type="checkbox"
                 label="Female"
                 className="bubbleFills"
                 name="gender"
                 id="Female"
-                onChange={this.handleRadioChange}
+                onChange={(event) => checkedGenders(event.target.value, event.target.checked)}
                 value="Female"
               />
               <Form.Check
-                type="radio"
+                type="checkbox"
                 label="Other"
                 className="bubbleFills"
                 name="gender"
                 id="Other"
-                onChange={this.handleRadioChange}
+                onChange={(event) => checkedGenders(event.target.value, event.target.checked)}
                 value="Other"
               />
             </Col>
           </Form.Row>
         </Form.Group>
 
-        <Form.Group controlId="creditcard" className="groupForms">
+        <Form.Group controlId="creditCardField" className="groupForms">
           <Form.Row>
             <Col>
               <Form.Label column="sm" className="labelForms">
@@ -180,23 +223,18 @@ function Filter(props) {
             </Col>
             <Col>
               <Form.Control
-                required
                 size="sm"
                 type="text"
                 placeholder="Credit/Debit"
                 className="controlForms"
                 name="creditCard"
-                onChange={this.handleChange}
-                //value={this.state.creditCard}
+                onChange={(event) => setCreditCard(event.target.value)}
               />
-              <Form.Control.Feedback type="invalid">
-                Please enter a credit card number.
-              </Form.Control.Feedback>
             </Col>
           </Form.Row>
         </Form.Group>
 
-        <Form.Group controlId="race" className="groupForms">
+        <Form.Group controlId="raceCheckBoxes" className="groupForms">
           <Form.Row>
             <Col>
               <Form.Label column="sm" className="labelForms">
@@ -204,33 +242,75 @@ function Filter(props) {
               </Form.Label>
             </Col>
             <Col>
-              <Form.Control
-                required
-                as="select"
-                className="controlForms"
-                size="sm"
-                defaultValue="Choose..."
-                name="race"
-                onChange={this.handleChange}
-              >
-                <option>Choose...</option>
-                <option>Asian</option>
-                <option>White</option>
-                <option>Black or African American</option>
-                <option>Hispanic/Latino</option>
-                <option>Native American or Alaska Native</option>
-                <option>Native Hawaiian or Other Pacific Islander</option>
-                <option>Other</option>
-              </Form.Control>
-              <Form.Control.Feedback type="invalid">
-                Please choose a race.
-              </Form.Control.Feedback>
+            <Form.Check
+                inline
+                className="race"
+                type="checkbox"
+                id="race"
+                label="Asian"
+                value="Asian"
+                onChange={(event) => checkedRaces(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="race"
+                type="checkbox"
+                id="race"
+                label="White"
+                value="White"
+                onChange={(event) => checkedRaces(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="race"
+                type="checkbox"
+                id="race"
+                label="Black or African American"
+                value="Black or African American"
+                onChange={(event) => checkedRaces(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="race"
+                type="checkbox"
+                id="race"
+                label="Hispanic/Latino"
+                value="Hispanic/Latino"
+                onChange={(event) => checkedRaces(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="race"
+                type="checkbox"
+                id="race"
+                label="Native American or Alaska Native"
+                value="Native American or Alaska Native"
+                onChange={(event) => checkedRaces(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="race"
+                type="checkbox"
+                id="race"
+                label="Native Hawaiian or Other Pacific Islander"
+                value="Native Hawaiian or Other Pacific Islander"
+                onChange={(event) => checkedRaces(event.target.value, event.target.checked)}
+              />
+              <Form.Check
+                inline
+                className="race"
+                type="checkbox"
+                id="race"
+                label="Other"
+                value="Other"
+                onChange={(event) => checkedRaces(event.target.value, event.target.checked)}
+              />
             </Col>
           </Form.Row>
         </Form.Group>
 
         <Button variant="outline-danger" type="submit">
-          Submit
+          Filter
         </Button>
       </Form>
     </div>

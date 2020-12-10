@@ -28,6 +28,7 @@ import TOS from "./views/TOS";
 import DataBrowser from "./views/DataBrowser"
 import DataUploader from "./views/DataUploader"
 import ErrorPage from "./views/ErrorPage"
+import PricingPage from "./views/Pricing"
 
 function App() {
 
@@ -56,6 +57,9 @@ function App() {
           </Route>
           <Route path="/data-uploader">
             <DataUploader />
+          </Route>
+          <Route path="/pricing">
+            <PricingPage />
           </Route>
           <Route path="/404">
             <ErrorPage />
