@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
     Bar,
+    Line,
 } from "react-chartjs-2";
 import {
     MDBContainer,
@@ -11,13 +12,13 @@ import { withRouter } from 'react-router-dom';
 class AboutUs extends React.Component {
 
     // The bar graph setup
-    state = {
+    Barstate = {
         dataBarGraph: {
-          labels: ["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"],
+          labels: ["Quarter 4 Y2020", "Quarter 3 Y2020", "Quarter 2 Y2020", "Quarter 1 Y2020"],
             datasets: [
                 {
-                label: "Quarters Are In Millions",
-                data: [53, 58, 80, 119],
+                label: "Quarterly Revenue",
+                data: [119, 93, 80, 72],
                 backgroundColor: [
                     "rgba(255, 134,159,0.4)",
                     "rgba(98,  182, 239,0.4)",
@@ -49,6 +50,7 @@ class AboutUs extends React.Component {
             ],
             yAxes: [
               {
+                label: "Millions of Dollars",
                 gridLines: {
                   display: true,
                   color: "rgba(0, 0, 0, 0.1)"
@@ -61,7 +63,105 @@ class AboutUs extends React.Component {
           }
         }
       }
+
+    // The Line Graph Setup
+    LineState = {
+      dataLine: {
+        labels: ["Janurary", "February", "March", "April", "May", "June", "July"],
+          datasets: [
+            {
+              // Google
+              label: "Google's Data Usage",
+              fill: true,
+              lineTension: 0.3, 
+              backgroundColor: "rgba(255, 206, 68, .3)",
+              borderColor: "#FFDEAD",
+              borderCapStyle: "butt",
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: "miter",
+              pointBorderColor: "rgb(255, 255, 255)",
+              poitnBackgroundColor: "rgb(255, 255, 255)",
+              pointBorderWdith: 10,
+              pointHoverRadius: 5, 
+              pointHoverBackgroundColor: "rgb(66, 133, 244)",
+              pointHoverBackgroundColor: "rgba(220, 220, 220, 1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [1423, 1993, 963, 1160, 1000, 983, 1497]
+            },
+            {
+              // Facebook
+              label: "Facebook's Data Usage",
+              fill: true,
+              lineTension: 0.3, 
+              backgroundColor: "rgba(66, 133, 244, .3)",
+              borderColor: "rgb(66, 133, 244)",
+              borderCapStyle: "butt",
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: "miter",
+              pointBorderColor: "rgb(255, 255, 255)",
+              poitnBackgroundColor: "rgb(255, 255, 255)",
+              pointBorderWdith: 10,
+              pointHoverRadius: 5, 
+              pointHoverBackgroundColor: "rgb(66, 133, 244)",
+              pointHoverBackgroundColor: "rgba(220, 220, 220, 1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [1650, 1590, 1800, 1810, 1560, 1550, 1400]
+            },
+            {
+              // Apple
+              label: "Apple's Data Usage",
+              fill: true,
+              lineTension: 0.3, 
+              backgroundColor: "rgba(242, 242, 242, .3)",
+              borderColor: "rgb(242, 242, 242)",
+              borderCapStyle: "butt",
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: "miter",
+              pointBorderColor: "rgb(255, 255, 255)",
+              poitnBackgroundColor: "rgb(255, 255, 255)",
+              pointBorderWdith: 10,
+              pointHoverRadius: 5, 
+              pointHoverBackgroundColor: "rgb(66, 133, 244)",
+              pointHoverBackgroundColor: "rgba(220, 220, 220, 1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [1280, 1480, 1400, 1190, 1860, 1270, 1900]
+            },
+            {
+              // Netflix
+              label: "Netflix's Data Usage",
+              fill: true,
+              lineTension: 0.3, 
+              backgroundColor: "rgba(299, 9, 20, .3)",
+              borderColor: "rgb(299, 9, 20)",
+              borderCapStyle: "butt",
+              borderDash: [],
+              borderDashOffset: 0.0,
+              borderJoinStyle: "miter",
+              pointBorderColor: "rgb(255, 255, 255)",
+              poitnBackgroundColor: "rgb(255, 255, 255)",
+              pointBorderWdith: 10,
+              pointHoverRadius: 5, 
+              pointHoverBackgroundColor: "rgb(66, 133, 244)",
+              pointHoverBackgroundColor: "rgba(220, 220, 220, 1)",
+              pointHoverBorderWidth: 2,
+              pointRadius: 1,
+              pointHitRadius: 10,
+              data: [721, 832, 1100, 813, 940, 1190, 970]
+            }
+          ]
+      }
+    }
     
+    // render page
     render() {
 
         return (
@@ -87,8 +187,18 @@ class AboutUs extends React.Component {
                         <h3 className="dataTable">
                             Quarterly Revenue
                         </h3>
-                        <Bar data={this.state.dataBarGraph} options={this.state.barChartOptions} className="data-text"/>
+                        <Bar data={this.Barstate.dataBarGraph} options={this.Barstate.barChartOptions} className="data-text"/>
                     </MDBContainer>
+                </div>
+                <br />
+                <header className="about-header">Our Partners</header>
+                <div>
+                  <MDBContainer className="data-text">
+                    <h3 className="dataTable">
+                      Data Usage in Terabytes
+                    </h3>
+                    <Line data={this.LineState.dataLine} options={{ responsive: true }} />
+                  </MDBContainer>
                 </div>
             </div>
         );
