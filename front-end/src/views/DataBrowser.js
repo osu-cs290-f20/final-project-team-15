@@ -53,15 +53,15 @@ function DataBrowser()
       let newGenderArr = gender;
       newGenderArr.push(checkedGender);
       console.log(newGenderArr);
-      setBloodType(newGenderArr);
+      setGender(newGenderArr);
 
     }
     else
     {
 
-      let newGenderArr = bloodType.filter(curr => curr != newGenderArr);
+      let newGenderArr = gender.filter(curr => curr != checkedGender);
       console.log(newGenderArr);
-      setBloodType(newGenderArr);
+      setGender(newGenderArr);
 
     }
     
@@ -77,15 +77,15 @@ function DataBrowser()
       let newRaceArr = race;
       newRaceArr.push(checkedRace);
       console.log(newRaceArr);
-      setBloodType(newRaceArr);
+      setRace(newRaceArr);
 
     }
     else
     {
 
-      let newRaceArr = bloodType.filter(curr => curr != checkedRace);
+      let newRaceArr = race.filter(curr => curr != checkedRace);
       console.log(newRaceArr);
-      setBloodType(newRaceArr);
+      setRace(newRaceArr);
 
     }
     
@@ -96,10 +96,9 @@ function DataBrowser()
       <Filter setFirstName={setFirstName} setLastName={setLastName} setAgeMin={setAgeMin} setAgeMax={setAgeMax} checkedBloodTypes={checkedBloodTypes} setPhoneNumber={setPhoneNumber} checkedGenders={checkedGenders} setCreditCard={setCreditCard} checkedRaces={checkedRaces} />
 
       <div>
-        {/* <p>Min Age: {ageMin}</p>
-        <p>Max Age: {ageMax}</p> */}
-        <p>Blood Type: {bloodType}</p>
-        <p>Last Name: {lastName}</p>
+        <p>Blood Type: {bloodType.join(', ')}</p>
+        <p>Gender: {gender.join(', ')}</p>
+        <p>Race: {race.join(', ')}</p>
       </div>
 
       <Post />

@@ -12,7 +12,9 @@ import {
 import {ProgressBar} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "../Pricing.css";
-import {FaRegMoneyBillAlt} from "react-icons/fa"
+import {FaRegMoneyBillAlt} from "react-icons/fa";
+import { AiOutlineBank} from "react-icons/ai";
+import { FaCcVisa } from "react-icons/fa";
 
 class PricingPage extends React.Component {
 
@@ -50,7 +52,7 @@ class PricingPage extends React.Component {
                                     <div className="description">
                                         <FaRegMoneyBillAlt className="icon-layout option"/>
                                         
-                                        <h4 className="option sale-text">SALES</h4>
+                                        <h4 className="option sale-text">BASIC</h4>
                                     
                                         <h3 class="money-text option">$20</h3>
                                     </div>
@@ -61,14 +63,14 @@ class PricingPage extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Sales Subscription
+                                                Purchase Basic Subscription
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
                                                     Purchase Item
                                                 </MDBModalHeader>
                                                 <MDBModalBody className="modal-bodyfont">
-                                                    Are you sure you want to purchase a Sales subscript plan?
+                                                    Are you sure you want to purchase this subscript plan?
                                                 </MDBModalBody>
                                                 <MDBModalFooter>
                                                     <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">
@@ -88,18 +90,18 @@ class PricingPage extends React.Component {
 
                         <div class="row">
                             <div class="">
-                                <div className="sale">
+                                <div className="pro">
                                     <div className="description">
-                                        <FaRegMoneyBillAlt className="icon-layout option"/>
+                                        <FaCcVisa className="icon-layout option"/>
                                         
-                                        <h4 className="option sale-text">SALES</h4>
+                                        <h4 className="option sale-text">PRO</h4>
                                     
-                                        <h3 class="money-text option">$20</h3>
+                                        <h3 class="money-text option">$99</h3>
                                     </div>
 
                                     <div class="">
                                         
-                                        <ProgressBar now={20} variant="light" className="sale-bar"/>
+                                        <ProgressBar now={40} variant="light" className="sale-bar"/>
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
@@ -110,7 +112,7 @@ class PricingPage extends React.Component {
                                                     Purchase Item
                                                 </MDBModalHeader>
                                                 <MDBModalBody className="modal-bodyfont">
-                                                    Are you sure you want to purchase a Pro subscript plan?
+                                                    Are you sure you want to purchase this subscript plan?
                                                 </MDBModalBody>
                                                 <MDBModalFooter>
                                                     <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">
@@ -130,29 +132,28 @@ class PricingPage extends React.Component {
 
                         <div class="row">
                             <div class="">
-                                <div className="sale">
+                                <div className="elite">
                                     <div className="description">
-                                        <FaRegMoneyBillAlt className="icon-layout option"/>
-                                        
-                                        <h4 className="option sale-text">SALES</h4>
+                                        <AiOutlineBank className="icon-layout option"/>
+                                        <h4 className="option sale-text">Elite</h4>
                                     
-                                        <h3 class="money-text option">$20</h3>
+                                        <h3 class="money-text option">$299</h3>
                                     </div>
 
                                     <div class="">
                                         
-                                        <ProgressBar now={20} variant="light" className="sale-bar"/>
+                                        <ProgressBar now={70} variant="light" className="sale-bar"/>
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Enterprise Subscription
+                                                Purchase Elite Subscription
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
                                                     Purchase Item
                                                 </MDBModalHeader>
                                                 <MDBModalBody className="modal-bodyfont">
-                                                    Are you sure you want to purchase a Enterprise subscript plan?
+                                                    Are you sure you want to purchase this subscript plan?
                                                 </MDBModalBody>
                                                 <MDBModalFooter>
                                                     <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">
