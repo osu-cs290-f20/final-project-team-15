@@ -3,18 +3,22 @@
   margin: 10px; 
   background-color: #242526;
   display: flex;
-  
+  border-radius: 10px;
+
   /* width: 300px;
   border-radius: 10px;
   height: 500px; */
   flex-direction: column;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
 }
 
-.header {
+.header-filter {
   color: #ffffff;
   /* margin: 15px;
   border: 5px; */
   font-family: "Archivo", sans-serif;
+  font-size: 75px;
+  text-align: center;
 }
 
 .group {

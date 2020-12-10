@@ -2,3 +2,11 @@
     display: flex;
     flex-direction: row;
 }
+
+.posts-header {
+    color: white;
+    font-family: "Archivo", sans-serif;
+    text-align: center;
+    font-size: 75px;
+    padding: 10px;
+}

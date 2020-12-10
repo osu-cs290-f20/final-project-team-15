@@ -36,3 +36,24 @@
     /* position: relative;
     top: 0px; */
 }
+
+ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.text-link {
+
+    color: inherit;
+    text-decoration: inherit;
+
+}
+
+.text-link:hover {
+
+    text-decoration: inherit;
+
+}

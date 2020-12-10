@@ -34,3 +34,15 @@ p {
     font-size: 90px;
     margin-top: 35px;
 }
+
+.dataTable {
+    font-family: "Archivo", sans-serif;
+    color: white;
+    margin-top: 3rem !important;
+}
+
+.data-text {
+    color: white;
+    font-family: "Archivo", sans-serif;
+    margin: 75px;
+}

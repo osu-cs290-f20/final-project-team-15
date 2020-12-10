@@ -11,7 +11,7 @@ function Filter({setFirstName, setLastName, setAgeMin, setAgeMax, checkedBloodTy
     <div className="divFilter">
 
       {/* filtering*/}
-      <h1 className="header">Filtering</h1>
+      <h1 className="header-filter">Filtering</h1>
       <br />
 
       <Form>

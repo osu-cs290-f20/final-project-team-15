@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { FaDiscord, } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
@@ -24,17 +25,42 @@ function Footer()
             <div>
                 <h2 className="header">Services</h2>
                     <ul>
-                        <li className="listText"><a>Data Browser</a></li>
-                        <li className="listText"><a>Data Uploader</a></li>
-                        <li className="listText"><a>Data Auctionhouse</a></li>
+                        <li className="listText">
+                            <Link className="text-link" to="/data-browser">
+                                Data Browser
+                            </Link>    
+                        </li>
+                        <li className="listText">
+                            <Link className="text-link" to="/data-uploader">
+                                Data Uploader
+                            </Link>
+                        </li>
+                        <li className="listText">
+                            <Link className="text-link" to="/about">
+                                Data Auctionhouse
+                            </Link>
+                        </li>
                     </ul>
             </div>
             <div>
                 <h2 className="header">About Data Harvester 9000</h2>
                     <ul>
-                        <li className="listText"><a>FAQ</a></li>
-                        <li className="listText"><a>Terms and Conditions</a></li>
-                        <li className="listText"><a>Careers</a></li>
+                        <li className="listText">FAQ</li>
+                        <li className="listText">
+                            <Link className="text-link" to="/tos">
+                                Terms and Conditions
+                            </Link>
+                        </li>
+                        <li className="listText">
+                            <Link className="text-link" to="/careers">
+                                Careers
+                            </Link>
+                        </li>
+                        <li className="listText">
+                            <Link className="text-link" to="/about">
+                                About
+                            </Link>
+                        </li>
                     </ul>
             </div>
             <div>

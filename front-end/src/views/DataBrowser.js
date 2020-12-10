@@ -95,12 +95,13 @@ function DataBrowser()
     <div myClass="DataBrowserPage">
       <Filter setFirstName={setFirstName} setLastName={setLastName} setAgeMin={setAgeMin} setAgeMax={setAgeMax} checkedBloodTypes={checkedBloodTypes} setPhoneNumber={setPhoneNumber} checkedGenders={checkedGenders} setCreditCard={setCreditCard} checkedRaces={checkedRaces} />
 
-      <div>
+      {/* <div>
         <p>Blood Type: {bloodType.join(', ')}</p>
         <p>Gender: {gender.join(', ')}</p>
         <p>Race: {race.join(', ')}</p>
-      </div>
-
+      </div> */}
+      
+      <header className="posts-header">Posts</header>
       <Post />
     </div>
 
