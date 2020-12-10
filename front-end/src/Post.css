@@ -1,4 +1,4 @@
-.div {
+.divPost {
   padding: 10px;
   margin: 10px;
   background-color: #242526;
@@ -7,12 +7,13 @@
   border-radius: 10px;
   flex-grow: 0;
   width: 300px;
-  height: 300px;
+  height: 400px;
 }
 
 .fontStyle {
+  height: 50px;
   padding: 10px;
-  margin: 10px;
+  margin: 2px;
   color: white;
   display: block;
   font-family: "Archivo", sans-serif;

@@ -1,20 +1,41 @@
 .divCars {
-    color: white;
-    font-family: "Archivo", sans-serif;
-
+  color: white;
+  font-family: "Archivo", sans-serif;
 }
 
 .img-fluid {
-    width: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid black;
-    float: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  float: left;
 }
 
 .CareersText {
-    color:white;
-    text-align: center;
+  color: white;
+  text-align: center;
+}
 
+.card {
+}
+
+.profile-title {
+  color: white;
+}
+
+.profile-text {
+  color: white;
+}
+
+.profile-body {
+  color: white;
+}
+
+.view-overlay {
+  max-height: 400px;
+  max-width: 400px;
+  margin: 0px 0px 100px 0px;
+}
+
+.profile {
 }

@@ -31,7 +31,7 @@ class Forms extends React.Component {
       gender: "",
       creditCard: "",
       phoneNumber: "",
-      race: ""
+      race: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -46,34 +46,24 @@ class Forms extends React.Component {
   }
 
   handleRadioChange(event) {
-
     this.setState({
-
-      gender: event.target.value
-
-    })
-
+      gender: event.target.value,
+    });
   }
 
   handleClick(event) {
-
     const form = event.currentTarget;
-    if(form.checkValidity() === false)
-    {
-
+    if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-
     }
 
     this.setState({
-
-      validated: true
-
-    })
+      validated: true,
+    });
 
     // if (
-    //   this.state.first_name.length > 0 && 
+    //   this.state.first_name.length > 0 &&
     //   this.state.last_name.length > 0 &&
     //   parseInt(this.state.age) > 0 &&
     //   this.state.blood_type.length > 0 &&
@@ -82,31 +72,30 @@ class Forms extends React.Component {
     //   this.state.race.length > 0 &&
     //   this.state.creditCard > 0
     //   ) {
-      // list out the conditions
-        let json = {
-          first_name: this.state.first_name,
-          last_name: this.state.last_name,
-          age: this.state.age,
-          blood_type: this.state.blood_type,
-          phone_number: this.state.phoneNumber,
-          gender: this.state.gender,
-          race: this.state.race,
-          credit_card: this.state.creditCard
-          // check if need credit card
-        };
+    // list out the conditions
+    let json = {
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
+      age: this.state.age,
+      blood_type: this.state.blood_type,
+      phone_number: this.state.phoneNumber,
+      gender: this.state.gender,
+      race: this.state.race,
+      credit_card: this.state.creditCard,
+      // check if need credit card
+    };
 
-      fetch("http://localhost:8000/harvester/", {
-        method: 'POST',
-        headers: {
-          'Content-Type' : 'application/json'
-        },
-        body: JSON.stringify(json)
-      }).then((res) => {
-      
-        if(res.status === 500) {
-          console.log("Missing a required field in payload")
-        }
-        else if(res.status === 201) {
+    fetch("http://localhost:8000/harvester/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(json),
+    })
+      .then((res) => {
+        if (res.status === 500) {
+          console.log("Missing a required field in payload");
+        } else if (res.status === 201) {
           console.log("Created");
 
           // Anthony: Do page refresh or clear inputs/state here
@@ -118,12 +107,12 @@ class Forms extends React.Component {
           this.state.creditCard = "";
           this.state.phoneNumber = "";
           this.state.race = "";
-
         }
-      }).catch((e) => {
+      })
+      .catch((e) => {
         // Something didn't work
         console.log(e);
-      })
+      });
 
     //}
     // else {
@@ -136,7 +125,11 @@ class Forms extends React.Component {
       <div className="divForms">
         <h1 className="headerForms">Forms</h1>
         <br />
-        <Form noValidate validated={this.state.validated} onSubmit={this.handleClick}>
+        <Form
+          noValidate
+          validated={this.state.validated}
+          onSubmit={this.handleClick}
+        >
           <Form.Group controlId="name" className="groupForms">
             <Form.Row>
               <Col>
@@ -320,16 +313,18 @@ class Forms extends React.Component {
           <Form.Group controlId="race" className="groupForms">
             <Form.Row>
               <Col>
-                <Form.Label column="sm" className="labelForms">Race</Form.Label>
+                <Form.Label column="sm" className="labelForms">
+                  Race
+                </Form.Label>
               </Col>
               <Col>
-                <Form.Control 
+                <Form.Control
                   required
-                  as="select" 
-                  className="controlForms" 
-                  size="sm" 
+                  as="select"
+                  className="controlForms"
+                  size="sm"
                   defaultValue="Choose..."
-                  name="race" 
+                  name="race"
                   onChange={this.handleChange}
                 >
                   <option>Choose...</option>
@@ -351,9 +346,8 @@ class Forms extends React.Component {
           <Button variant="outline-danger" type="submit">
             Submit
           </Button>
-
         </Form>
-       
+
         {/* <h1 style={{color:"#FFFFFF"}}> gender: {this.state.gender.length > 0 ? "true" : "false"}</h1>
         <h1 style={{color:"#FFFFFF"}}> Test value: {this.state.gender}</h1> */}
       </div>

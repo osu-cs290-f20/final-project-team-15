@@ -1,46 +1,46 @@
 .div {
-  padding: 10px;
-  margin: 10px;
+  /* padding: 10px;
+  margin: 10px; */
   background-color: #242526;
-  display: flex;
+  /* display: flex;
   width: 300px;
   border-radius: 10px;
   height: 500px;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 .header {
   color: #ffffff;
-  margin: 15px;
-  border: 5px;
+  /* margin: 15px;
+  border: 5px; */
   font-family: "Archivo", sans-serif;
 }
 
 .group {
   color: #ffffff;
-  margin: 10px;
+  /* margin: 10px;
   padding: 10px;
   border: 5px;
-  margin-left: 10px;
+  margin-left: 10px; */
 }
 
 .label {
   color: #ffffff;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   margin: 10px;
   padding: 10px;
   width: 300px;
-  height: 300px;
+  height: 300px; */
   font-family: "Archivo", sans-serif;
 }
 
 .control {
-  display: inline-flex;
-  flex-direction: column;
+  /* display: inline-flex;
+  flex-direction: column; */
   font-family: "Archivo", sans-serif;
-  display: flex;
+  /* display: flex;
   margin-right: 50px;
   margin: 20px;
-  padding: 10px;
+  padding: 10px; */
 }
