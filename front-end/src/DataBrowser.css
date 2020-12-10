@@ -1,0 +1,4 @@
+.DataBrowserPage {
+    display: flex;
+    flex-direction: row;
+}
