@@ -20,57 +20,41 @@ function Header()
         <div>
             {/* Navbar  */}
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand><Link className="text-link" to="/">Data Harvester 9000</Link></Navbar.Brand>
+            <Navbar.Brand href="/">Data Harvester 9000</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
                 <NavDropdown title="Services" id="collapsable-nav-dropdown">
-                <NavDropdown.Item>
-                    <Link className="text-link" to="/data-browser">
+                    <NavDropdown.Item href="/data-browser">
                     Data Browser
-                    </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                    <Link className="text-link" to="/data-uploader">
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/data-uploader">
                     Data Uploader
-                    </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item><Link className="text-link" to="/data-auctionhouse">Data Auctionhouse</Link></NavDropdown.Item>
+                    </NavDropdown.Item>
+                <NavDropdown.Item href="/data-auctionhouse">Data Auctionhouse</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link><Link className="text-link" to="/pricing">Pricing</Link></Nav.Link>
+                <Nav.Link href="/pricing">Pricing</Nav.Link>
                 <NavDropdown title="About" id="collapsable-nav-dropdown">
-                <NavDropdown.Item>
-                    <Link className="text-link" to="/faq">
+                    <NavDropdown.Item href="/faq">
                     FAQ
-                    </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                    <Link className="text-link" to="/tos">
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/tos">
                     Terms and Conditions
-                    </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                    <Link className="text-link" to="/about">
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/about">
                     About Us
-                    </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                    <Link className="text-link" to="/careers">
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/careers">
                     Careers
-                    </Link>
-                </NavDropdown.Item>
+                    </NavDropdown.Item>
                 </NavDropdown>
             </Nav>
             <Nav>
-                <Nav.Link>
-                    <Link className="text-link" to="/enterprise">
+                <Nav.Link href="/enterprise">
                     For Enterprise
-                    </Link>
                 </Nav.Link>
-                <Nav.Link eventKey={2}>
-                    <Link className="text-link" to="/cart">
+                <Nav.Link href="/cart">
                     Cart <FaShoppingCart/ >
-                    </Link>
                 </Nav.Link>
             </Nav>
             </Navbar.Collapse>
