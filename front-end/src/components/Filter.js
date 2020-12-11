@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import mockData from "../mockdata.json";
 import "../Filter.css";
 
-function Filter({setFirstName, setLastName, setAgeMin, setAgeMax, checkedBloodTypes, setPhoneNumber, checkedGenders, setCreditCard, checkedRaces, SetFilterState}) {
+function Filter({setFirstName, setLastName, setAgeMin, setAgeMax, checkedBloodTypes, setPhoneNumber, checkedGenders, setCreditCard, checkedRaces, setFilterState}) {
   
 
   return (
@@ -14,7 +14,7 @@ function Filter({setFirstName, setLastName, setAgeMin, setAgeMax, checkedBloodTy
       <h1 className="header-filter">Filtering</h1>
       <br />
 
-      <Form onSubmit={() => SetFilterState()}>
+      <Form onSubmit={() => setFilterState(true)}>
         <Form.Group controlId="nameField" className="groupForms">
           <Form.Row>
             <Col>
@@ -309,7 +309,7 @@ function Filter({setFirstName, setLastName, setAgeMin, setAgeMax, checkedBloodTy
           </Form.Row>
         </Form.Group>
 
-        <Button variant="outline-danger" type="submit">
+        <Button variant="outline-danger" type="button" onClick={() => setFilterState(true)}>
           Filter
         </Button>
       </Form>

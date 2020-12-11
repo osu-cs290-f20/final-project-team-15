@@ -50,7 +50,7 @@ function UserReview(props) {
       <Form>
 
         <Form.Group>
-          <Form.Label>Overall Rating</Form.Label>
+          <Form.Label style={ratingStarsLabel}>Overall Rating</Form.Label>
           <ReactStars
             count={5}
             onChange={(newRating) => handleRating(newRating)}
@@ -60,12 +60,12 @@ function UserReview(props) {
         </Form.Group>
         
         <Form.Group>
-          <Form.Label>Add a Headline</Form.Label>
+          <Form.Label style={ratingStarsLabel}>Add a Headline</Form.Label>
           <Form.Control type="text" placeholder="What's most important to know?" />
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Add a Headline</Form.Label>
+          <Form.Label style={ratingStarsLabel}>Add a Headline</Form.Label>
           <Form.Control as="textarea" placeholder="What did you like or dislike? Can you explain your decision for the rating?" />
         </Form.Group>
 
@@ -77,8 +77,14 @@ function UserReview(props) {
       
       {/* <p>{rating}</p>
       <div style={postStyle}>{post}</div> */}
+      <br />
     </div>
   );
+}
+
+const ratingStarsLabel = {
+  color: "white",
+  fontSize: 20,
 }
 
 const userReviewStyle = {

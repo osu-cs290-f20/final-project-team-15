@@ -10,18 +10,20 @@ class Post extends React.Component {
       .then((response) => response.json())
       .then((resJson) => {
         this.setState({ newData: resJson });
+        this.setState({ originalArr: resJson});
       })
       .catch((e) => {
         console.log(e);
       });
   }
 
-  constructor() {
+  constructor(props) {
 
-    super();
+    super(props);
 
     this.state = {
-      newData: null
+      newData: null,
+      originalArr: null
       /*
         filteredBloodType: ["A+", "B-"]
 
@@ -49,9 +51,165 @@ class Post extends React.Component {
         ]
       */
     };
+    this.filterPosts = this.filterPosts.bind(this);
+    this.postFilterCheck = this.postFilterCheck.bind(this);
+  }
+
+  
+
+  postFilterCheck(post)
+  {
+
+    // Filter first name
+    if (this.props.firstName !== "")
+    {
+
+      if(post.first_name.search(this.props.firstName) === -1)
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter last name
+    if (this.props.lastName !== "")
+    {
+
+      if(post.last_name.search(this.props.lastName) === -1)
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter min age
+    if (this.props.ageMin !== 0)
+    {
+
+      if(post.age < this.props.ageMin)
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter max age
+    if(this.props.ageMax !== 0)
+    {
+
+      if(post.age > this.props.ageMax)
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter blood type
+    if (Array.isArray(this.props.bloodType) && this.props.bloodType.length)
+    {
+
+      if(!this.props.bloodType.includes(post.blood_type))
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter phone number
+    if (this.props.phoneNumber !== "")
+    {
+
+      if(post.phoneNumber.search(this.props.phoneNumber) === -1)
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter gender type
+    if (Array.isArray(this.props.gender) && this.props.gender.length)
+    {
+
+      if(!this.props.gender.includes(post.gender))
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter credit card number
+    if (this.props.creditCard !== "")
+    {
+
+      if(post.credit_card.search(this.props.creditCard) === -1)
+      {
+
+        return false;
+
+      }
+
+    }
+
+    // Filter race
+    if (Array.isArray(this.props.race) && this.props.race.length)
+    {
+
+      if(!this.props.race.includes(post.race))
+      {
+
+        return false;
+
+      }
+
+    }
+
+    return true;
+
+  }
+
+  filterPosts()
+  {
+    
+    // No set state, don't want it to re-render
+    this.state.newData = this.state.originalArr;
+
+    let newArr = this.state.newData.filter(post => this.postFilterCheck(post));
+
+    // Set filtered array to newData and reset filtering
+    this.props.setFilterState(false);
+
+    this.setState({
+      newData: newArr,
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+
+    if(prevProps.filterState !== this.props.filterState)
+    {
+
+      this.filterPosts();
+
+    }
+
   }
 
   render() {
+
     return (
       <div className="pageStyle">
         {this.state.newData

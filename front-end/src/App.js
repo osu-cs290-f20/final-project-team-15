@@ -31,6 +31,7 @@ import DataAuctionhouse from "./views/DataAuctionhouse";
 import ErrorPage from "./views/ErrorPage";
 import PricingPage from "./views/Pricing";
 import FAQ from "./views/Faq";
+import Enterprise from "./views/Enterprise";
 
 function App() {
 
@@ -44,7 +45,9 @@ function App() {
 
         {/* Route */}
         <Switch>
-
+          <Route path="/enterprise">
+            <Enterprise />
+          </Route>
           <Route path="/about">
             <AboutUs />
           </Route>

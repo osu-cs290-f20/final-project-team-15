@@ -7,6 +7,7 @@ import {
 import Gallery from 'react-photo-gallery';
 import mockData from "../mockdata.json";
 
+
 const row1 = [
   {
     src: 'https://images.hdqwalls.com/download/ciri-cyberpunk-2077-tv-1920x1080.jpg',
@@ -125,13 +126,12 @@ class DataAuctionhouse extends React.Component {
                         </table>
                     </div>
 
-                    <div className="tbl-content">
-                        <table cellpadding="0" cellspacing="0" border="0">
-                            <tbody>
+                    <div className="tbl-content" >
+                        <table cellpadding="0" cellspacing="0" border="0" >
+                            <tbody >
                                 {this.state.newData
                                 ? this.state.newData.map((data) => {
                                     return (
-                                        // <div className="">
                                             <tr>
                                                 <td>{data.id}</td>
                                                 <td>{data.first_name}</td>
@@ -142,8 +142,7 @@ class DataAuctionhouse extends React.Component {
                                                 <td>{data.credit_card}</td>
                                                 <td>{data.phone_number}</td>
                                                 <td>{data.race}</td>
-                                            </tr>
-                                        // </div>
+                                            </tr> 
                                         );
                                     })
                                 : "LOADING"}

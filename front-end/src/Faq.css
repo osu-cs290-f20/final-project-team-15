@@ -5,3 +5,33 @@
     text-align: center;
 
 }
+
+.tabs {
+    margin: 50px;
+}
+
+.tab-link {
+    font-family: "Archivo", sans-serif;
+    color: white;
+    /* background-color: red; */
+    background: -webkit-linear-gradient(left, #d66626, #e32f13);
+    background: linear-gradient(to right, #d66626, #e32f13);
+    opacity: 1;
+    margin: 5px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+}
+
+.tab-link:hover {
+    font-family: "Archivo", sans-serif;
+    color:white;
+    opacity: 0.5;
+    background: -webkit-linear-gradient(left, #d66626, #e32f13);
+    background: linear-gradient(to right, #d66626, #e32f13);
+}
+
+.tab-answer {
+    font-family: "Archivo", sans-serif;
+    font-size: 25px;
+    color: white;
+    float: left;
+}

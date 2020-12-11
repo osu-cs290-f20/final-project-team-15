@@ -95,7 +95,7 @@ function DataBrowser()
 
   return (
     <div myClass="DataBrowserPage">
-      <Filter setFirstName={setFirstName} setLastName={setLastName} setAgeMin={setAgeMin} setAgeMax={setAgeMax} checkedBloodTypes={checkedBloodTypes} setPhoneNumber={setPhoneNumber} checkedGenders={checkedGenders} setCreditCard={setCreditCard} checkedRaces={checkedRaces} SetFilterState={SetFilterState} />
+      <Filter setFirstName={setFirstName} setLastName={setLastName} setAgeMin={setAgeMin} setAgeMax={setAgeMax} checkedBloodTypes={checkedBloodTypes} setPhoneNumber={setPhoneNumber} checkedGenders={checkedGenders} setCreditCard={setCreditCard} checkedRaces={checkedRaces} setFilterState={setFilterState} />
 
       {/* <div>
         <p>Blood Type: {bloodType.join(', ')}</p>
@@ -104,7 +104,7 @@ function DataBrowser()
       </div> */}
       
       <header className="posts-header">Posts</header>
-      <Post firstName={firstName} lastName={lastName} ageMin={ageMin} ageMax={ageMax} bloodType={bloodType} phoneNumber={phoneNumber} gender={gender} creditCard={creditCard} race={race} />
+      <Post firstName={firstName} lastName={lastName} ageMin={ageMin} ageMax={ageMax} bloodType={bloodType} phoneNumber={phoneNumber} gender={gender} creditCard={creditCard} race={race} filterState={filterState} setFilterState={setFilterState} />
     </div>
 
   )

@@ -9,6 +9,7 @@ class MessageBox extends React.Component {
         return( 
             <div>
                 <MDBNotification className="notification-box"
+                    autohide={5000}
                     bodyClassName="p-5 font-weight-bold white-text"
                     className="stylish-color-dark"
                     closeClassName="blue-grey-text"

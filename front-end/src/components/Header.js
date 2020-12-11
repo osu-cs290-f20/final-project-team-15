@@ -62,7 +62,11 @@ function Header()
                 </NavDropdown>
             </Nav>
             <Nav>
-                <Nav.Link>For Enterprise</Nav.Link>
+                <Nav.Link>
+                    <Link className="text-link" to="/enterprise">
+                    For Enterprise
+                    </Link>
+                </Nav.Link>
                 <Nav.Link eventKey={2}>
                 Cart <FaShoppingCart/ >
                 </Nav.Link>
