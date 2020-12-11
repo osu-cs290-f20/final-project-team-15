@@ -211,7 +211,6 @@ class AboutUs extends React.Component {
                 <header className="about-header">Support Sector</header>
                 <div>
                   <MDBContainer className="data-text">
-                      <h3 className="mt-5">Global Sector Support</h3>
                       <Pie data={this.PieState.dataPie} options={{ responsive: true }}/>
                   </MDBContainer>
                 </div>
