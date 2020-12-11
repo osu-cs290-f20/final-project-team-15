@@ -25,13 +25,13 @@ function Home()
         {
 
             original: 'https://i.imgur.com/lIslWHB.png',
-            description: 'Get dirt on anybody! *For a small price'
+            description: 'Track down anybody for a small price!'
 
         },
         {
 
             original: 'https://proxy.spigotmc.org/0795791b099e16577a3125ec70cce9b2bee223f1?url=https%3A%2F%2Fwww.spawnchunk.com%2Fauctionhouse%2Fimages%2Fauctionhouse1.png',
-            description: 'Never seen before data auctionhouse mechanic.'
+            description: 'Avid Mineplex player? You\'ll be quite well acquainted with our Data Auctionhouse!'
 
         },
 

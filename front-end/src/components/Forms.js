@@ -332,8 +332,15 @@ class Forms extends React.Component {
           <Button variant="outline-danger" type="submit">
             Submit
           </Button>
+          <div>
+            <br className="spacing-forms"/>
+            <br className="spacing-forms"/>
+            <br className="spacing-forms"/>
+            <br className="spacing-forms"/>
+            <br className="spacing-forms"/>
+            <br className="spacing-forms"/>
+          </div>
         </Form>
-
         {/* <h1 style={{color:"#FFFFFF"}}> gender: {this.state.gender.length > 0 ? "true" : "false"}</h1>
         <h1 style={{color:"#FFFFFF"}}> Test value: {this.state.gender}</h1> */}
       </div>

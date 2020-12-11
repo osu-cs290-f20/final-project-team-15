@@ -32,6 +32,7 @@ import ErrorPage from "./views/ErrorPage";
 import PricingPage from "./views/Pricing";
 import FAQ from "./views/Faq";
 import Enterprise from "./views/Enterprise";
+import Cart from "./views/Cart";
 
 function App() {
 
@@ -47,6 +48,9 @@ function App() {
         <Switch>
           <Route path="/enterprise">
             <Enterprise />
+          </Route>
+          <Route path="/cart">
+            <Cart />
           </Route>
           <Route path="/about">
             <AboutUs />

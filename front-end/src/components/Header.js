@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap"; // Navbar material
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaShoppingCart } from "react-icons/fa";
-import "../Header.css"
+import "../Header.css";
 
 function Header()
 {
@@ -68,7 +68,9 @@ function Header()
                     </Link>
                 </Nav.Link>
                 <Nav.Link eventKey={2}>
-                Cart <FaShoppingCart/ >
+                    <Link className="text-link" to="/cart">
+                    Cart <FaShoppingCart/ >
+                    </Link>
                 </Nav.Link>
             </Nav>
             </Navbar.Collapse>

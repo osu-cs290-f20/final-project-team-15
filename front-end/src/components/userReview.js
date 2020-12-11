@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import mockReview from "../mockReview.json";
 import {AiFillStar} from "react-icons/ai";
 import "../UserReview.css"
@@ -9,9 +9,28 @@ function UserReview(props) {
 
   // User Review state
   const [rating, setRating] = useState(0);
+  const [dateTime, setDateTime] = useState("");
   const [reviewTitle, setReviewTitle] = useState("");
   const [reviewBody, setReviewBody] = useState("");
   const [name, setName] = useState("");
+
+  const [dbReviews, setReviews] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/reviews/", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((resJson) => {
+        // console.log(resJson);
+        setReviews(resJson);
+        // this.setState({ newData: resJson });
+        // this.setState({ originalArr: resJson});
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [])
 
   function handleRating(newRating)
   {
@@ -31,23 +50,67 @@ function UserReview(props) {
     
   }
 
-  // let review = mockReview;
-  // let post = review.map((review) => (
-  //   <div style={reviewerStyle}>
-  //     <h2 style={fontStyle}>
-  //       {review.first_name} {review.last_name} <AiFillStar />
-  //       <AiFillStar />
-  //       <AiFillStar />
-  //       <AiFillStar />
-  //       <AiFillStar />
-  //     </h2>
-  //     <p style={fontStyle}>{review.description}</p>
-  //   </div>
-  // ));
+  function handleSubmit()
+  {
+
+
+    let userReviewJson = {
+
+      full_name: name,
+      title: reviewTitle,
+      description: reviewBody,
+      datetime: dateTime
+  
+    };
+
+    fetch("http://localhost:8000/reviews/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userReviewJson),
+    })
+      .then((res) => {
+        if (res.status === 500) {
+          console.log("Missing a required field in payload");
+        } else if (res.status === 201) {
+
+          setName("");
+          setReviewTitle("");
+          setReviewBody("");
+          setDateTime("");
+          setRating(0);
+          alert("Created Review");
+          window.location.reload();
+        }
+      })
+      .catch((e) => {
+        // Something didn't work
+        // console.log(e);
+        alert("Could not communicate with server");
+      });
+
+  }
+
   return (
     
     <div style={userReviewStyle}>
+
+      {/* <div>{post}</div> */}
+
       <h1 style={{ color: "#FFFFFF" }}>User Reviews</h1>
+      
+      {dbReviews ? dbReviews.map((review) => {
+        return(
+          <div style={reviewerStyle}>
+            <h2 style={fontStyle}>
+              {review.full_name} <ReactStars edit={false} value={5} size={30}/>
+            </h2>
+            <p style={fontStyle}>{review.description}</p>
+          </div>
+        );
+      }) : ""}
+      
       <Form>
 
         <Form.Group>
@@ -66,7 +129,7 @@ function UserReview(props) {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label style={ratingStarsLabel}>Add a Headline</Form.Label>
+          <Form.Label style={ratingStarsLabel}>Add a written review</Form.Label>
           <Form.Control as="textarea" placeholder="What did you like or dislike? Can you explain your decision for the rating?" onChange={(event) => setReviewBody(event.target.value)} />
         </Form.Group>
 
@@ -75,18 +138,12 @@ function UserReview(props) {
           <Form.Control type="text" placeholder="Full Name" onChange={(event) => setName(event.target.value)} />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="button" onClick={() => handleSubmit()}>
           Submit
         </Button>
 
       </Form>
-      
-
-      <p>{rating}</p>
-      <p>{reviewTitle}</p>
-      <p>{name}</p>
-      <p>{reviewBody}</p>
-      <br />
+    
     </div>
   );
 }
@@ -129,4 +186,5 @@ const reviewerStyle = {
 }
 
 export default UserReview;
+
 
