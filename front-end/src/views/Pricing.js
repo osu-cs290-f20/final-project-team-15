@@ -45,8 +45,9 @@ class PricingPage extends React.Component {
                     <h3 id="pricing-pageheader">Our Pricing Plans</h3>
                 
                     <p class="pricing-description">
-                        We offer a wide variety of services to help pull practical pranks on your family and friends, or even
-                        retrieve data from a competitors company. However we are not responsible for any damages and/or trouble you 
+                        We offer a wide variety of plans for all of your data gathering needs; We can give you your mom's credit card
+                        information, your crush's phone number, or even all the juicy details and data from a rival company.
+                        However we are not responsible for any damages and/or trouble you 
                         as the user may cause. Use at your own risk, we just want your money.
                     </p>
                     <div className="service">

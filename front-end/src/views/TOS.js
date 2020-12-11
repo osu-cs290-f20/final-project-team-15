@@ -8,6 +8,7 @@ import Switch from 'react-bootstrap/esm/Switch';
 import Home from "./Home";
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
+import AudioTranscription from '../AudioTranscription.mp4'
 
 class TermsAndConditions extends React.Component {
     constructor() {
@@ -972,6 +973,12 @@ class TermsAndConditions extends React.Component {
                     -... ..- - / ... .- ...- . / --- ..- .-. / --- .-- -. .-.-.-
                   </p>
                 </div>
+              </Tab>
+
+              <Tab eventKey="vid" title="Audio Transcription">
+                <video className='videoTag' width="600" height="300" controls="controls">
+                  <source src={AudioTranscription} type='video/mp4' />
+                </video>
               </Tab>
 
             </Tabs>
