@@ -1,8 +1,9 @@
 import React from 'react';
-import UserReview from "../components/userReview";
+import UserReview from "../components/UserReview";
 import Forms from "../components/Forms";
 import ImageGallery from 'react-image-gallery';
 import '../Home.css';
+import MessageBox from "../components/MessageBox";
 
 function Home()
 {
@@ -40,7 +41,8 @@ function Home()
 
         <div>
             <ImageGallery items={imgs} showFullscreenButton={false} showPlayButton={false} showThumbnails={false} autoPlay={true} />
-
+            <br />
+            <MessageBox />
             <UserReview />
         </div>
 

@@ -15,6 +15,8 @@ import "../Pricing.css";
 import {FaRegMoneyBillAlt} from "react-icons/fa";
 import { AiOutlineBank} from "react-icons/ai";
 import { FaCcVisa } from "react-icons/fa";
+import userReview from "../components/UserReview";
+
 
 class PricingPage extends React.Component {
 
@@ -42,9 +44,11 @@ class PricingPage extends React.Component {
                     
                     <h3 id="pricing-pageheader">Our pricing plans</h3>
                 
-                    <p class="text-muted w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
-                    eum porro a pariatur veniam.</p>
+                    <p class="pricing-description">
+                        We offer a wide variety of services to help pull practical pranks on your family and friends, or even
+                        retrieve data from a competitors company. However we are not responsible for any damages and/or trouble you 
+                        as the user may cause. Use at your own risk, we just want your money.
+                    </p>
                     <div className="service">
                         <div class="row">
                             <div class="">
@@ -172,6 +176,8 @@ class PricingPage extends React.Component {
                         </div>
                    </div>
                 </section>
+                <br />
+                <userReview />
             </div>
 
         )

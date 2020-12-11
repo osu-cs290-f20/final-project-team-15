@@ -35,12 +35,14 @@ function Header()
                     Data Uploader
                     </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item>Data Auctionhouse</NavDropdown.Item>
+                <NavDropdown.Item><Link className="text-link" to="/data-auctionhouse">Data Auctionhouse</Link></NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link><Link className="text-link" to="/pricing">Pricing</Link></Nav.Link>
                 <NavDropdown title="About" id="collapsable-nav-dropdown">
                 <NavDropdown.Item>
+                    <Link className="text-link" to="/faq">
                     FAQ
+                    </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
                     <Link className="text-link" to="/tos">

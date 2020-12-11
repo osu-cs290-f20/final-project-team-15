@@ -1,25 +1,82 @@
-import React from "react";
+import React, {useState} from "react";
 import mockReview from "../mockReview.json";
-import {AiFillStar} from "react-icons/ai"
+import {AiFillStar} from "react-icons/ai";
+import "../UserReview.css"
+import ReactStars from "react-rating-stars-component";
+import { Button, Col, Form } from "react-bootstrap";
 
-function userReview(props) {
-  let review = mockReview;
-  let post = review.map((review) => (
-    <div style={reviewerStyle}>
-      <h2 style={fontStyle}>
-        {review.first_name} {review.last_name} <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-        <AiFillStar />
-      </h2>
-      <p style={fontStyle}>{review.description}</p>
-    </div>
-  ));
+function UserReview(props) {
+
+  // User Review state
+  const [rating, setRating] = useState(0);
+  const [reviewTitle, setReviewTitle] = useState("");
+  const [reviewBody, setReviewBody] = useState("");
+
+  function handleRating(newRating)
+  {
+
+    if(newRating !== 5)
+    {
+
+      alert("Only 5* ratings are allowed!!!");
+
+    }
+    else
+    {
+
+      setRating(newRating);
+
+    }
+    
+  }
+
+  // let review = mockReview;
+  // let post = review.map((review) => (
+  //   <div style={reviewerStyle}>
+  //     <h2 style={fontStyle}>
+  //       {review.first_name} {review.last_name} <AiFillStar />
+  //       <AiFillStar />
+  //       <AiFillStar />
+  //       <AiFillStar />
+  //       <AiFillStar />
+  //     </h2>
+  //     <p style={fontStyle}>{review.description}</p>
+  //   </div>
+  // ));
   return (
+    
     <div style={userReviewStyle}>
       <h1 style={{ color: "#FFFFFF" }}>User Reviews</h1>
-      <div style={postStyle}>{post}</div>
+      <Form>
+
+        <Form.Group>
+          <Form.Label>Overall Rating</Form.Label>
+          <ReactStars
+            count={5}
+            onChange={(newRating) => handleRating(newRating)}
+            size={24}
+            activeColor="#ffd700"
+          />
+        </Form.Group>
+        
+        <Form.Group>
+          <Form.Label>Add a Headline</Form.Label>
+          <Form.Control type="text" placeholder="What's most important to know?" />
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label>Add a Headline</Form.Label>
+          <Form.Control as="textarea" placeholder="What did you like or dislike? Can you explain your decision for the rating?" />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+
+      </Form>
+      
+      {/* <p>{rating}</p>
+      <div style={postStyle}>{post}</div> */}
     </div>
   );
 }
@@ -32,7 +89,8 @@ const userReviewStyle = {
   display: "flex",
   flexDirection: "column",
   color: "#111111",
-  fontColor: "#FFFFFF"
+  fontColor: "#FFFFFF",
+  boxShadow: "0 -2px 10px rgba(0, 0, 0, 1)"
 };
 
 const fontStyle = {
@@ -41,6 +99,7 @@ const fontStyle = {
     display: "inline-flex",
     color: "#FFFFFF",
     borderRadius: 10
+    
 };
 
 const reviewerStyle = {
@@ -49,12 +108,13 @@ const reviewerStyle = {
     flexDirection: "column",
     padding: 10,
     margin: 10,
-    borderRadius: 10
+    borderRadius: 10,
+    boxShadow: "0 -2px 10px rgba(0, 0, 0, 1)"
     
 }
 
 const postStyle = {
     
 }
-export default userReview;
+export default UserReview;
 

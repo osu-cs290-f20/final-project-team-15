@@ -28,6 +28,12 @@
     /* justify-content: center; */
 }
 
+.pricing-description {
+    font-family: "Archivo", sans-serif;
+    text-align: center;
+    padding: 0px 200px 0px 200px;
+}
+
 .elite {
     font-family: "Archivo", sans-serif;
     background-color: #fbbb33;

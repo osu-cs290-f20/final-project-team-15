@@ -134,28 +134,6 @@ class AboutUs extends React.Component {
               pointRadius: 1,
               pointHitRadius: 10,
               data: [1280, 1480, 1400, 1190, 1860, 1270, 1900]
-            },
-            {
-              // Netflix
-              label: "Netflix's Data Usage",
-              fill: true,
-              lineTension: 0.3, 
-              backgroundColor: "rgba(299, 9, 20, .3)",
-              borderColor: "rgb(299, 9, 20)",
-              borderCapStyle: "butt",
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: "miter",
-              pointBorderColor: "rgb(255, 255, 255)",
-              poitnBackgroundColor: "rgb(255, 255, 255)",
-              pointBorderWdith: 10,
-              pointHoverRadius: 5, 
-              pointHoverBackgroundColor: "rgb(66, 133, 244)",
-              pointHoverBackgroundColor: "rgba(220, 220, 220, 1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: [721, 832, 1100, 813, 940, 1190, 970]
             }
           ]
       }
@@ -200,6 +178,7 @@ class AboutUs extends React.Component {
                     <Line data={this.LineState.dataLine} options={{ responsive: true }} />
                   </MDBContainer>
                 </div>
+                <br />
             </div>
         );
     }

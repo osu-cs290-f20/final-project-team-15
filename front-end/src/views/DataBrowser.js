@@ -19,6 +19,8 @@ function DataBrowser()
   const [creditCard, setCreditCard] = useState("");
   const [race, setRace] = useState([]);
 
+  const [filterState, SetFilterState] = useState(false);
+
   function checkedBloodTypes(checkedBloodType, checkState)
   {
 
@@ -102,7 +104,7 @@ function DataBrowser()
       </div> */}
       
       <header className="posts-header">Posts</header>
-      <Post />
+      <Post firstName={firstName} lastName={lastName} ageMin={ageMin} ageMax={ageMax} bloodType={bloodType} phoneNumber={phoneNumber} gender={gender} creditCard={creditCard} race={race} />
     </div>
 
   )

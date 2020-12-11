@@ -1,0 +1,9 @@
+.container {
+
+    font-family: "Archivo", sans-serif;
+    font-size: 10px;
+    color: white;
+    z-index: 50;
+    margin: 20px;
+
+}

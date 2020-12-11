@@ -28,7 +28,7 @@ class Forms extends React.Component {
       last_name: "",
       blood_type: "",
       age: "",
-      gender: "",
+      gender: "Male",
       creditCard: "",
       phoneNumber: "",
       race: "",

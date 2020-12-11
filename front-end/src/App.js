@@ -25,10 +25,12 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Careers from "./views/Careers";
 import TOS from "./views/TOS";
-import DataBrowser from "./views/DataBrowser"
-import DataUploader from "./views/DataUploader"
-import ErrorPage from "./views/ErrorPage"
-import PricingPage from "./views/Pricing"
+import DataBrowser from "./views/DataBrowser";
+import DataUploader from "./views/DataUploader";
+import DataAuctionhouse from "./views/DataAuctionhouse";
+import ErrorPage from "./views/ErrorPage";
+import PricingPage from "./views/Pricing";
+import FAQ from "./views/Faq";
 
 function App() {
 
@@ -52,11 +54,17 @@ function App() {
           <Route path="/tos">
             <TOS />
           </Route>
+          <Route path="/faq">
+            <FAQ />
+          </Route>
           <Route path="/data-browser">
             <DataBrowser />
           </Route>
           <Route path="/data-uploader">
             <DataUploader />
+          </Route>
+          <Route path="/data-auctionhouse">
+            <DataAuctionhouse />
           </Route>
           <Route path="/pricing">
             <PricingPage />

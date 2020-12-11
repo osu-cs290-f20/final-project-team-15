@@ -17,12 +17,40 @@ class Post extends React.Component {
   }
 
   constructor() {
+
     super();
 
     this.state = {
-      newData: null,
+      newData: null
+      /*
+        filteredBloodType: ["A+", "B-"]
+
+
+        newArray = []
+
+        for element in newData:
+          if element.blood_type in filteredBloodType and if element.race in filteredRace ... and___:
+            newArray.append(element)
+
+
+
+        [
+          {
+            "blood_type": "A+",
+            "first_name": "Mark",
+            "Race"
+            ...
+          },
+          {
+            "blood_type": "B-",
+            "first_name": "Khai",
+            ...
+          }
+        ]
+      */
     };
   }
+
   render() {
     return (
       <div className="pageStyle">

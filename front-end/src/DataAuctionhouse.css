@@ -1,0 +1,52 @@
+.auction-header {
+    font-family: "Archivo", sans-serif;
+    font-size: 75px;
+    text-align: center;
+    color: white;
+    margin: 5px;
+    padding: 20px;
+}
+
+th, td{
+    color: white;
+    font-family: "Archivo", sans-serif;
+    overflow-y: auto;
+    /* width: 20px */
+    /* float: left; */
+}
+
+.div-table {
+    font-family: "Archivo", sans-serif;
+    justify-content: space-evenly;
+    display: flex;
+    max-width: 1000;
+    flex-direction: column;
+    text-align: center;
+}
+
+.table {
+    /* padding: 150px; */
+}
+
+.table-display {
+    /* padding: 0px 250px 0px 250px; */
+}
+
+th.pound {
+    /* width: 10px; */
+}
+
+tr {
+    width: 550px;
+    /* margin: auto; */
+}
+
+.last-name-push {
+    /* transform: translate(0px, 33px); */
+}
+
+.body-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

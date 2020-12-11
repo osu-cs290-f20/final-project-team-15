@@ -25,8 +25,8 @@ class CareersPage extends React.Component {
         <header className="careers-header">The Developers</header>
         <div className="career-team">
         <MDBContainer className="career-container">
-          <MDBCol style={{ maxWidth: "22rem" }}>
-            <MDBCard>
+          <MDBCol style={{ maxWidth: "22rem" }} className="">
+            <MDBCard className="">
               <MDBCardImage 
                 className="img-fluid" 
                 src="https://cdn.discordapp.com/attachments/774021123591372800/786095130326990879/Anthonyface.jpg"
@@ -44,6 +44,7 @@ class CareersPage extends React.Component {
             </MDBCard>
           </MDBCol>
         </MDBContainer>
+
         <MDBContainer className="career-container">
           <MDBCol style={{ maxWidth: "22rem" }}>
             <MDBCard>
