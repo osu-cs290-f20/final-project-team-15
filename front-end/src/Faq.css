@@ -35,3 +35,9 @@
     color: white;
     float: left;
 }
+
+.section-tab {
+    float: center;
+    margin: auto;
+    margin-top: 20px;
+}

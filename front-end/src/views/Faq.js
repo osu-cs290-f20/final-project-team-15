@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Tab, Row, Col, Nav} from 'react-bootstrap';
+import { MDBCol } from 'mdbreact';
 import "../Faq.css";
 import MessageBox from "../components/MessageBox";
 
@@ -11,6 +12,7 @@ class FAQ extends React.Component {
 
         }
     };
+
     // render the page
     render() {
         const { activeItemPills } = this.state;
@@ -18,6 +20,13 @@ class FAQ extends React.Component {
         return(
             <div>
                 <header className="faq-header">Fequently Asked Questions</header>
+                <section>
+                    <MDBCol md="6" className="section-tab">
+                        <div className="active-pink-3 active-pink-4 mb-4">
+                            <input className="form-control" type="text" placeholder="Search" aria-label="Search"/>
+                        </div>
+                    </MDBCol>
+                </section>
                 <br />
                 <div>
                 <div className="tabs">

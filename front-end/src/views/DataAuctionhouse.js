@@ -126,9 +126,9 @@ class DataAuctionhouse extends React.Component {
                         </table>
                     </div>
 
-                    <div className="tbl-content" >
+                    <div className="tbl-content scrollbar scrollbar-sunny-morning" >
                         <table cellpadding="0" cellspacing="0" border="0" >
-                            <tbody >
+                            <tbody className="">
                                 {this.state.newData
                                 ? this.state.newData.map((data) => {
                                     return (

@@ -11,6 +11,7 @@ function UserReview(props) {
   const [rating, setRating] = useState(0);
   const [reviewTitle, setReviewTitle] = useState("");
   const [reviewBody, setReviewBody] = useState("");
+  const [name, setName] = useState("");
 
   function handleRating(newRating)
   {
@@ -61,12 +62,17 @@ function UserReview(props) {
         
         <Form.Group>
           <Form.Label style={ratingStarsLabel}>Add a Headline</Form.Label>
-          <Form.Control type="text" placeholder="What's most important to know?" />
+          <Form.Control type="text" placeholder="What's most important to know?" onChange={(event) => setReviewTitle(event.target.value)} />
         </Form.Group>
 
         <Form.Group>
           <Form.Label style={ratingStarsLabel}>Add a Headline</Form.Label>
-          <Form.Control as="textarea" placeholder="What did you like or dislike? Can you explain your decision for the rating?" />
+          <Form.Control as="textarea" placeholder="What did you like or dislike? Can you explain your decision for the rating?" onChange={(event) => setReviewBody(event.target.value)} />
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label style={ratingStarsLabel}>Name</Form.Label>
+          <Form.Control type="text" placeholder="Full Name" onChange={(event) => setName(event.target.value)} />
         </Form.Group>
 
         <Button variant="primary" type="submit">
@@ -75,8 +81,11 @@ function UserReview(props) {
 
       </Form>
       
-      {/* <p>{rating}</p>
-      <div style={postStyle}>{post}</div> */}
+
+      <p>{rating}</p>
+      <p>{reviewTitle}</p>
+      <p>{name}</p>
+      <p>{reviewBody}</p>
       <br />
     </div>
   );
@@ -119,8 +128,5 @@ const reviewerStyle = {
     
 }
 
-const postStyle = {
-    
-}
 export default UserReview;
 
