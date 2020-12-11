@@ -74,7 +74,7 @@ class PricingPage extends React.Component {
                                                     Purchase Item
                                                 </MDBModalHeader>
                                                 <MDBModalBody className="modal-bodyfont">
-                                                    Are you sure you want to purchase this subscript plan?
+                                                    Are you sure you want to purchase this subscription plan?
                                                 </MDBModalBody>
                                                 <MDBModalFooter>
                                                     <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">
@@ -116,7 +116,7 @@ class PricingPage extends React.Component {
                                                     Purchase Item
                                                 </MDBModalHeader>
                                                 <MDBModalBody className="modal-bodyfont">
-                                                    Are you sure you want to purchase this subscript plan?
+                                                    Are you sure you want to purchase this subscription plan?
                                                 </MDBModalBody>
                                                 <MDBModalFooter>
                                                     <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">
@@ -157,7 +157,7 @@ class PricingPage extends React.Component {
                                                     Purchase Item
                                                 </MDBModalHeader>
                                                 <MDBModalBody className="modal-bodyfont">
-                                                    Are you sure you want to purchase this subscript plan?
+                                                    Are you sure you want to purchase this subscription plan?
                                                 </MDBModalBody>
                                                 <MDBModalFooter>
                                                     <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">
@@ -203,7 +203,7 @@ class PricingPage extends React.Component {
                                                     Purchase Item
                                                 </MDBModalHeader>
                                                 <MDBModalBody className="modal-bodyfont">
-                                                    Are you sure you want to purchase this subscript plan?
+                                                    Are you sure you want to purchase this subscription plan?
                                                 </MDBModalBody>
                                                 <MDBModalFooter>
                                                     <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">
@@ -245,7 +245,7 @@ class PricingPage extends React.Component {
                                                 Purchase Item
                                             </MDBModalHeader>
                                             <MDBModalBody className="modal-bodyfont">
-                                                Are you sure you want to purchase this subscript plan?
+                                                Are you sure you want to purchase this subscription plan?
                                             </MDBModalBody>
                                             <MDBModalFooter>
                                                 <MDBBtn color="danger" onClick={this.Modaltoggle(12)} className="modal-innerbuttons">

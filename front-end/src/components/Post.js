@@ -24,32 +24,7 @@ class Post extends React.Component {
     this.state = {
       newData: null,
       originalArr: null
-      /*
-        filteredBloodType: ["A+", "B-"]
-
-
-        newArray = []
-
-        for element in newData:
-          if element.blood_type in filteredBloodType and if element.race in filteredRace ... and___:
-            newArray.append(element)
-
-
-
-        [
-          {
-            "blood_type": "A+",
-            "first_name": "Mark",
-            "Race"
-            ...
-          },
-          {
-            "blood_type": "B-",
-            "first_name": "Khai",
-            ...
-          }
-        ]
-      */
+      
     };
     this.filterPosts = this.filterPosts.bind(this);
     this.postFilterCheck = this.postFilterCheck.bind(this);

@@ -45,7 +45,11 @@ function Footer()
             <div>
                 <h2 className="header">About Data Harvester 9000</h2>
                     <ul>
-                        <li className="listText">FAQ</li>
+                        <li className="listText">
+                            <Link className="text-link" to="/faq">
+                                FAQ
+                            </Link>
+                        </li>
                         <li className="listText">
                             <Link className="text-link" to="/tos">
                                 Terms and Conditions

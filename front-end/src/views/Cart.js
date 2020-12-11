@@ -59,7 +59,7 @@ class Cart extends React.Component {
                                         
                                         <h4 className="option sale-text">CREDIT</h4>
                                     
-                                        <h3 class="money-text option">1223 4324 1324 7646</h3>
+                                        <h3 class="money-text option">**** **** **** 7646</h3>
                                     </div>
 
                                     <div class="">
@@ -68,7 +68,7 @@ class Cart extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Credit Card Today
+                                                Reveal the Credit Card Number
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
@@ -101,7 +101,7 @@ class Cart extends React.Component {
                                         
                                         <h4 className="option sale-text">CREDIT</h4>
                                     
-                                        <h3 class="money-text option">5849 5348 1348 5049</h3>
+                                        <h3 class="money-text option">**** **** **** 5049</h3>
                                     </div>
 
                                     <div class="">
@@ -110,7 +110,7 @@ class Cart extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Credit Card Today
+                                                Reveal the Credit Card Number
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
@@ -142,7 +142,7 @@ class Cart extends React.Component {
                                         <AiFillApple className="icon-layout option"/>
                                         <h4 className="option sale-text">CREDIT</h4>
                                     
-                                        <h3 class="money-text option">4852 2384 2348 2839</h3>
+                                        <h3 class="money-text option">**** **** **** 2839</h3>
                                     </div>
 
                                     <div class="">
@@ -151,7 +151,7 @@ class Cart extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Credit Card Today
+                                                Reveal the Credit Card Number
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
@@ -186,7 +186,7 @@ class Cart extends React.Component {
                                         
                                         <h4 className="option sale-text">CREDIT</h4>
                                     
-                                        <h3 class="money-text option">3472 2831 4983 2384</h3>
+                                        <h3 class="money-text option">**** **** **** 2384</h3>
                                     </div>
 
                                     <div class="">
@@ -195,7 +195,7 @@ class Cart extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Credit Card Today
+                                                Reveal the Credit Card Number
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
@@ -228,7 +228,7 @@ class Cart extends React.Component {
                                     
                                     <h4 className="option sale-text">CREDIT</h4>
                                 
-                                    <h3 class="money-text option">8345 3482 5384 2349</h3>
+                                    <h3 class="money-text option">**** **** **** 2349</h3>
                                 </div>
 
                                 <div class="">
@@ -237,7 +237,7 @@ class Cart extends React.Component {
                                     
                                     <MDBContainer className="subscription-button">
                                         <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                            Purchase Credit Card Today
+                                            Reveal the Credit Card Number
                                         </MDBBtn>
                                         <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                             <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
@@ -270,7 +270,7 @@ class Cart extends React.Component {
                                         
                                         <h4 className="option sale-text">CREDIT</h4>
                                     
-                                        <h3 class="money-text option">3244 1942 2004 3314</h3>
+                                        <h3 class="money-text option">**** **** **** 3314</h3>
                                     </div>
 
                                     <div class="">
@@ -279,7 +279,7 @@ class Cart extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Credit Card Today
+                                                Reveal the Credit Card Number
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
@@ -312,7 +312,7 @@ class Cart extends React.Component {
                                         
                                         <h4 className="option sale-text">CREDIT</h4>
                                     
-                                        <h3 class="money-text option">3428 8123 4589 3482</h3>
+                                        <h3 class="money-text option">**** **** **** 3482</h3>
                                     </div>
 
                                     <div class="">
@@ -321,7 +321,7 @@ class Cart extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Credit Card Today
+                                                Reveal the Credit Card Number
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
@@ -354,7 +354,7 @@ class Cart extends React.Component {
                                         
                                         <h4 className="option sale-text">CREDIT</h4>
                                     
-                                        <h3 class="money-text option">3428 2318 5802 5893</h3>
+                                        <h3 class="money-text option">**** **** **** 5893</h3>
                                     </div>
 
                                     <div class="">
@@ -363,7 +363,7 @@ class Cart extends React.Component {
                                         
                                         <MDBContainer className="subscription-button">
                                             <MDBBtn onClick={this.Modaltoggle(12)} className="modal-pagefont">
-                                                Purchase Credit Card Today
+                                                Reveal the Credit Card Number
                                             </MDBBtn>
                                             <MDBModal isOpen={this.state.modal12} Modaltoggle={this.Modaltoggle(12)} backdrop={false}>
                                                 <MDBModalHeader Modaltoggle={this.Modaltoggle(12)} className="modal-headerStyle">
