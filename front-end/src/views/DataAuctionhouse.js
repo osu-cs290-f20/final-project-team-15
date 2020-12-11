@@ -105,50 +105,53 @@ class DataAuctionhouse extends React.Component {
                 </div>
                 <header className="auction-header">Database</header>
 
-                <div className="table-display">
-                    <table id="tablePreview" class="table" cellpadding="0" cellspacing="0" border="0">
-                        <div className="div-table">
-                            <thead className="div-table">
+
+                <div className="database">
+                    <div class="tbl-header">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <thead>
                                 <tr>
-                                <th className="" scope="row">#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Age</th>
-                                <th>Blood Type</th>
-                                <th>Gender</th>
-                                <th>Credit Card</th>
-                                <th>Phone Number</th>
-                                <th>Race</th>
-                            
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Age</th>
+                                    <th>Blood Type</th>
+                                    <th>Gender</th>
+                                    <th>Credit Card</th>
+                                    <th>Phone Number</th>
+                                    <th>Race</th>
                                 </tr>
                             </thead>
-                        </div>  
                         </table>
-                        <table id="tablePreview" class="table" cellpadding="0" cellspacing="0" border="0">
-                        <tbody class="div-table">
-                            {this.state.newData
-                            ? this.state.newData.map((data) => {
-                                return (
-                                    <div className="">
-                                        <tr>
-                                        <th scope="row">{data.id}</th>
-                                        <td>{data.first_name}</td>
-                                        <td className="last-name-push">{data.last_name}</td>
-                                        <td>{data.age}</td>
-                                        <td>{data.blood_type}</td>
-                                        <td>{data.gender}</td>
-                                        <td>{data.credit_card}</td>
-                                        <td>{data.phone_number}</td>
-                                        <td>{data.race}</td>
-                                        </tr>
-                                    </div>
-                                    );
-                                })
-                            : "LOADING"}
-                        </tbody>
-                        
-                    </table>
+                    </div>
+
+                    <div className="tbl-content">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tbody>
+                                {this.state.newData
+                                ? this.state.newData.map((data) => {
+                                    return (
+                                        // <div className="">
+                                            <tr>
+                                                <td>{data.id}</td>
+                                                <td>{data.first_name}</td>
+                                                <td>{data.last_name}</td>
+                                                <td>{data.age}</td>
+                                                <td>{data.blood_type}</td>
+                                                <td>{data.gender}</td>
+                                                <td>{data.credit_card}</td>
+                                                <td>{data.phone_number}</td>
+                                                <td>{data.race}</td>
+                                            </tr>
+                                        // </div>
+                                        );
+                                    })
+                                : "LOADING"}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
             </div>
         );
         

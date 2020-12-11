@@ -15,7 +15,6 @@ import "../Pricing.css";
 import {FaRegMoneyBillAlt} from "react-icons/fa";
 import { AiOutlineBank} from "react-icons/ai";
 import { FaCcVisa } from "react-icons/fa";
-import userReview from "../components/UserReview";
 
 
 class PricingPage extends React.Component {
@@ -177,7 +176,6 @@ class PricingPage extends React.Component {
                    </div>
                 </section>
                 <br />
-                <userReview />
             </div>
 
         )

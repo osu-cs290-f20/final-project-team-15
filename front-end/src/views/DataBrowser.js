@@ -19,7 +19,7 @@ function DataBrowser()
   const [creditCard, setCreditCard] = useState("");
   const [race, setRace] = useState([]);
 
-  const [filterState, SetFilterState] = useState(false);
+  const [filterState, setFilterState] = useState(false);
 
   function checkedBloodTypes(checkedBloodType, checkState)
   {
@@ -95,7 +95,7 @@ function DataBrowser()
 
   return (
     <div myClass="DataBrowserPage">
-      <Filter setFirstName={setFirstName} setLastName={setLastName} setAgeMin={setAgeMin} setAgeMax={setAgeMax} checkedBloodTypes={checkedBloodTypes} setPhoneNumber={setPhoneNumber} checkedGenders={checkedGenders} setCreditCard={setCreditCard} checkedRaces={checkedRaces} />
+      <Filter setFirstName={setFirstName} setLastName={setLastName} setAgeMin={setAgeMin} setAgeMax={setAgeMax} checkedBloodTypes={checkedBloodTypes} setPhoneNumber={setPhoneNumber} checkedGenders={checkedGenders} setCreditCard={setCreditCard} checkedRaces={checkedRaces} SetFilterState={SetFilterState} />
 
       {/* <div>
         <p>Blood Type: {bloodType.join(', ')}</p>
