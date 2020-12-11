@@ -22,7 +22,9 @@ def index(request):
                 phone_number=obj['phone_number'],
                 gender=obj['gender'],
                 race=obj['race'],
-                age=obj['age']
+                age=obj['age'],
+                credit_card=obj['credit_card'],
+                blood_type=obj['blood_type']
             )
         except(KeyError):
             res = HttpResponse("Not all required fields were provided", status=400)
