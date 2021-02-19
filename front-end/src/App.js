@@ -1,11 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {
   Navbar,
   Nav,
@@ -35,16 +30,13 @@ import Enterprise from "./views/Enterprise";
 import Cart from "./views/Cart";
 
 function App() {
-
   return (
     <div className="App">
-
-
-      <Router>
+      {/* <Router>
 
         <Header />
 
-        {/* Route */}
+        
         <Switch>
           <Route path="/enterprise">
             <Enterprise />
@@ -87,7 +79,22 @@ function App() {
         
         <Footer />
         
-      </Router>
+      </Router> 
+      */}
+      <Header />
+      <Route exact path="/" component={Home} />
+      <Route path="/enterprise" component={Enterprise} />
+      <Route path="/cart" component={Cart} />
+      <Route path="/about" component={AboutUs} />
+      <Route path="careers" component={Careers} />
+      <Route path="/tos" component={TOS} />
+      <Route path="/faq" component={FAQ} />
+      <Route path="/data-browser" component={DataBrowser} />
+      <Route path="/data-uploader" component={DataUploader} />
+      <Route path="/data-auctionhouse" component={DataAuctionhouse} />
+      <Route path="/pricing" component={PricingPage} />
+      <Route path="/404" component={ErrorPage} />
+      <Footer />
     </div>
   );
 }
