@@ -32,61 +32,12 @@ import Cart from "./views/Cart";
 function App() {
   return (
     <div className="App">
-      {/* <Router>
-
-        <Header />
-
-        
-        <Switch>
-          <Route path="/enterprise">
-            <Enterprise />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          </Route>
-          <Route path="/about">
-            <AboutUs />
-          </Route>
-          <Route path="/careers">
-            <Careers />
-          </Route>
-          <Route path="/tos">
-            <TOS />
-          </Route>
-          <Route path="/faq">
-            <FAQ />
-          </Route>
-          <Route path="/data-browser">
-            <DataBrowser />
-          </Route>
-          <Route path="/data-uploader">
-            <DataUploader />
-          </Route>
-          <Route path="/data-auctionhouse">
-            <DataAuctionhouse />
-          </Route>
-          <Route path="/pricing">
-            <PricingPage />
-          </Route>
-          <Route path="/404">
-            <ErrorPage />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-
-        </Switch>
-        
-        <Footer />
-        
-      </Router> 
-      */}
       <Header />
       <Route exact path="/" component={Home} />
       <Route path="/enterprise" component={Enterprise} />
       <Route path="/cart" component={Cart} />
       <Route path="/about" component={AboutUs} />
-      <Route path="careers" component={Careers} />
+      <Route path="/careers" component={Careers} />
       <Route path="/tos" component={TOS} />
       <Route path="/faq" component={FAQ} />
       <Route path="/data-browser" component={DataBrowser} />
